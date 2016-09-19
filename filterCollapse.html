@@ -3,13 +3,20 @@
 <head>
     <title>JS Collapse Lesson</title>
 	<meta charset="utf-8" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />-->
 </head>
 <body>
-    <h1 class="title">JS Collapse Lesson</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="title">JS Collapse Lesson</h1>   
+            </div>
+        </div>
+    </div>
         <ul class="tabMenu menuContactInfo">
             <li>
-                <a href="" class="linkFilter linkPnnOffices active" data-id="pnnOffices">
+                <a href="" class="linkFilter linkPnnOffices btn btn-success" data-id="pnnOffices">
                     <i data-type="markerOffices" class="checked iconFont-i-pnn-check filter-checkbox"></i>
                     <i data-type="markerOffices" class="uncheck iconFont-i-pnn-uncheck filter-checkbox"></i>
                     Pnn Medical Offices
@@ -17,7 +24,7 @@
                 </a>
             </li>
             <li class="">
-                <a href="" class="linkFilter linkPnnDistributors" data-id="pnnDistributors">
+                <a href="" class="linkFilter linkPnnDistributors  btn btn-success" data-id="pnnDistributors">
                     <i data-type="markerDistributors" class="checked iconFont-i-pnn-check filter-checkbox"></i>
                     <i data-type="markerDistributors" class="uncheck iconFont-i-pnn-uncheck filter-checkbox"></i>
                     Our distributors
@@ -25,5 +32,28 @@
                 </a>
             </li>
         </ul>
+        <div class="">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body…</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 </body>
+<footer>
+    Footer
+</footer>
+<script type="text/javascript" src=""></script>
 </html>
