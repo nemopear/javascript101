@@ -2,3 +2,21 @@
     list-style: none;
     padding: 0;
 }
+
+.btnControl {
+    margin-top: 10px;
+}
+
+.well {
+    background-color: #3a4652;
+    margin-top: 20px;
+}
+
+.alert {
+    display: none;
+    margin-top: 5px;
+}
+
+.form-control.required {
+    border: 2px solid #c9302c;
+}
