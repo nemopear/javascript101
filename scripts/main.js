@@ -1,24 +1,41 @@
-﻿$(document).ready(function () {
+﻿function InputSet(element) {
     var arraySaveString = [];
+    var context;
+    this.inputContainer = $(element).find('.input-group');
+    this.input = $(element).find('.form-control');
+    this.alert = $(element).find('.alert');
+  
+    this.init = function () {
+        this.bindEvent();
+    };
 
-    $('.input-group').removeClass('hasError');
-    $('.input-group + .alert').hide();
-    $('input[name=getString]').focus(function () {
-        $(this).keyup(function () {
-            console.log('aa1');
-            if ($('input[name=getString]').val().length < 1) {
-                $('input[name=getString]').addClass('required');
-                $('.input-group').addClass('hasError');
-                $('.input-group + .alert').show();
-                console.log('aa');
+    this.bindEvent = function () {
+        this.onFocus();
+        this.onKeyUp();
+    };
+
+    this.onFocus = function () {
+        this.input.focus(function () {
+            
+        });
+    };
+
+    this.onKeyUp = function () {
+        this.input.keyup(function () {
+            if (!$(this).val()) {
+                $(this).addClass('required');
+                context.inputContainer.addClass('hasError');
+                context.alert.show();
             }
             else {
-                $('input[name=getString]').removeClass('required');
-                $('.input-group').removeClass('hasError');
-                $('.input-group + .alert').hide();
+                $(this).removeClass('required');
+                context.inputContainer.removeClass('hasError');
+                context.alert.hide();
             }
         });
-    });
+    };
+
+    
 
     var i = 0;
     $('#saveText').click(function () {
@@ -34,7 +51,7 @@
             $('input[name=getString]').val('');
             arraySaveString.push(getString);
             console.log(arraySaveString + '[' + i + ']');
-            $('.listOfText').append('<div class="itemText itemText-'+ i +'">' + getString + '<a href="#" class="delete label label-danger">Delete</a></div>');
+            $('.listOfText').append('<div class="itemText itemText-' + i + '">' + getString + '<a href="#" class="delete label label-danger">Delete</a></div>');
             i++;
         }
     });
@@ -49,14 +66,27 @@
             var inputTextVal = arraySaveString[i];
 
             $('.listOfText').append('<div class="itemText itemText-' + i + '">' + inputTextVal + '<a href="#" class="delete label label-danger">Delete</a></div>');
-            
-        }        
-    });
-});
 
+        }
+    });
+
+    context = this;
+    this.init();
+}
+
+var inputs = [];
+$(document).ready(function () {
+    $('.input-row').each(function () {
+        var ip = new InputSet(this);
+        inputs.push(ip);
+    });
+    console.log(inputs);
+});
+/*
 $('.itemText').on('load', function () {
     console.log('sdasdas');
     $('.delete').click(function () {
         $(this).parent().remove();
     });
 });
+*/

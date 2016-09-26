@@ -36,7 +36,7 @@
                 <h1>Good : )</h1>
                 <hr />
                 <h3>Quiz 1</h3>
-                <div class="row">
+                <div class="row input-row">
                     <div class="col-sm-6">
                         <form action="" method="POST">
                             <div class="input-group">
@@ -47,6 +47,29 @@
                             </div>
                             <div class="alert alert-dismissible alert-danger">
                                     This field is required**
+                            </div>
+                        </form>
+                        <div class="well">
+                            <h4>List Text Input</h4>
+                            <div class="listOfText"></div>
+                            <div class="btnControl">
+                                <button class="btn btn-danger" type="reset" id="clearText">Reset</button>
+                                <button class="btn btn-success" type="button" id="comeBack">Come back!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row input-row">
+                    <div class="col-sm-6">
+                        <form action="" method="POST">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="getString">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button" name="saveInputText" id="saveText">Save</button>
+                                </span>
+                            </div>
+                            <div class="alert alert-dismissible alert-danger">
+                                This field is required**
                             </div>
                         </form>
                         <div class="well">
