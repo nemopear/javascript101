@@ -16,6 +16,18 @@
 .form-control.required {
   border: 2px solid #c9302c; }
 
+.listOfText {
+  margin-bottom: 50px; }
+
+.itemText {
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px solid #a0a0a0; }
+
+.delete {
+  display: inline-block;
+  float: right; }
+
 .tabMenu > li {
   display: inline-block; }
 
