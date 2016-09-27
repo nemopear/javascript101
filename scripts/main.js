@@ -1,4 +1,5 @@
-﻿function InputSet(element) {
+// hahahah
+function InputSet(element) {
     var context;
     this.inputContainer = $(element).find('.input-group');
     this.input = $(element).find('.form-control');
@@ -20,6 +21,7 @@
         this.onClickSave();
         this.onClickReset();
         this.onClickComeback();
+        //this.onRenderList();
     };
 
     this.onFocus = function () {
@@ -64,31 +66,28 @@
         });
     };
 
+    // this.onRenderList = function() {
+    //     context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+    //     context.onDeleteEvent();
+
+    // }
+
 
 
     this.onDeleteEvent = function () {
         var deleteItem = [];
         $(element).find('.delete').unbind('click');
         $(element).find('.delete').bind('click', function () {
-        
-            $('.delete').each(function (index) {
-                console.log('delete '+ index);
-                //console.log(deleteItem.push() + 'push');
+            var getTextDelete = $(this).siblings('.text').text();
+            for (var i = 0; i < context.arraySaveString.length; i++) {
+                if (getTextDelete === context.arraySaveString[i]) {
+                    context.arraySaveString.splice(i,1);
+                    $(this).parents('.itemText').remove();
+                }
+                else {
 
-                //var text = $(this).prev().text();
-
-                //for (var i = 0; i < context.arraySaveString.length; i++) {
-                //    var inputTextVal = context.arraySaveString[i];
-                //    var removeText;
-                //    if (inputTextVal === text) {
-                //        removeText = context.arraySaveString[i, 1];
-                //        console.log(removeText + '123');
-                //    }
-                //    else {
-
-                //    }
-                //}
-            });
+                }
+            }    
         });
     };
 
@@ -105,6 +104,7 @@
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 var inputTextVal = context.arraySaveString[i];
                 context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + inputTextVal + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.onDeleteEvent();
             }
         });
     };
