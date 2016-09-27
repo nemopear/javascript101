@@ -1,9 +1,14 @@
 ﻿function InputSet(element) {
-    var arraySaveString = [];
     var context;
     this.inputContainer = $(element).find('.input-group');
     this.input = $(element).find('.form-control');
     this.alert = $(element).find('.alert');
+    this.saveText = $(element).find('#saveText');
+    this.arraySaveString = [];
+    this.list = $(element).find('.listOfText');
+    this.clearText = $(element).find('#clearText');
+    this.comeBack = $(element).find('#comeBack');
+    this.delBtn = $(element).find('.delete');
   
     this.init = function () {
         this.bindEvent();
@@ -12,6 +17,9 @@
     this.bindEvent = function () {
         this.onFocus();
         this.onKeyUp();
+        this.onClickSave();
+        this.onClickReset();
+        this.onClickComeback();
     };
 
     this.onFocus = function () {
@@ -35,46 +43,78 @@
         });
     };
 
-    
-
     var i = 0;
-    $('#saveText').click(function () {
-        $('.alert').hide();
-        var getString = $('input[name=getString]').val();
-        if (getString === '') {
-            $('.input-group').toggleClass('hasError');
-            $('input[name=getString]').addClass('required');
-            $('.input-group + .alert').show();
-        }
-        else {
-            $('.input-group').removeClass('hasError');
-            $('input[name=getString]').val('');
-            arraySaveString.push(getString);
-            console.log(arraySaveString + '[' + i + ']');
-            $('.listOfText').append('<div class="itemText itemText-' + i + '">' + getString + '<a href="#" class="delete label label-danger">Delete</a></div>');
-            i++;
-        }
-    });
+    this.onClickSave = function () {
+        this.saveText.click(function () {
+            if (!context.input.val()) {
+                console.log('No content');
+                context.inputContainer.addClass('hasError');
+                context.alert.show();
+            }
+            else {
+                context.inputContainer.removeClass('hasError');
+                context.alert.hide();
+                context.arraySaveString.push(context.input.val());
+                console.log('Add content : ' + context.input.val() + ' Array [' + i + ']');
+                context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.input.val('');
+                i++;
+                context.onDeleteEvent();
+            }
+        });
+    };
 
-    $('#clearText').click(function () {
-        $('.listOfText').empty();
-    });
 
-    $('#comeBack').click(function () {
-        $('.listOfText').empty();
-        for (var i = 0; i < arraySaveString.length; i++) {
-            var inputTextVal = arraySaveString[i];
 
-            $('.listOfText').append('<div class="itemText itemText-' + i + '">' + inputTextVal + '<a href="#" class="delete label label-danger">Delete</a></div>');
+    this.onDeleteEvent = function () {
+        var deleteItem = [];
+        $(element).find('.delete').unbind('click');
+        $(element).find('.delete').bind('click', function () {
+        
+            $('.delete').each(function (index) {
+                console.log('delete '+ index);
+                //console.log(deleteItem.push() + 'push');
 
-        }
-    });
+                //var text = $(this).prev().text();
+
+                //for (var i = 0; i < context.arraySaveString.length; i++) {
+                //    var inputTextVal = context.arraySaveString[i];
+                //    var removeText;
+                //    if (inputTextVal === text) {
+                //        removeText = context.arraySaveString[i, 1];
+                //        console.log(removeText + '123');
+                //    }
+                //    else {
+
+                //    }
+                //}
+            });
+        });
+    };
+
+    this.onClickReset = function () {
+        this.clearText.click(function () {
+            context.list.empty();
+        });
+    };
+
+    this.onClickComeback = function () {
+        this.comeBack.click(function () {
+            context.list.empty();
+            console.log(context.arraySaveString.length + " hello");    
+            for (var i = 0; i < context.arraySaveString.length; i++) {
+                var inputTextVal = context.arraySaveString[i];
+                context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + inputTextVal + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+            }
+        });
+    };
 
     context = this;
     this.init();
 }
 
 var inputs = [];
+
 $(document).ready(function () {
     $('.input-row').each(function () {
         var ip = new InputSet(this);
@@ -82,6 +122,7 @@ $(document).ready(function () {
     });
     console.log(inputs);
 });
+
 /*
 $('.itemText').on('load', function () {
     console.log('sdasdas');
