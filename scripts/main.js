@@ -113,12 +113,22 @@ function InputSet(element) {
         this.sortList.click(function () {
             $(this).sortable({
                 placeholder: "ui-sortable-placeholder",
+
                 update: function (event, sender) {
-                    var sortedIDs = $(this).sortable('toArray', {attribute: 'data-index'});
-                    var indexRearange = sortedIDs.join(';');
-                    //console.log(indexRearange + sender.sender);
+                    context.updateOrder();
+
                 }
             });
+        });
+    };
+
+    this.updateOrder = function () {
+        context.arraySaveString = [];
+        var index = 0;
+        $(element).find('.itemText').each(function () {
+            $(this).attr('data-index', index);
+            context.arraySaveString.push($(this).children('.text').text());
+            index++;
         });
     };
 
