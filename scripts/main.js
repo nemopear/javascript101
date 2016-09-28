@@ -10,6 +10,7 @@ function InputSet(element) {
     this.clearText = $(element).find('#clearText');
     this.comeBack = $(element).find('#comeBack');
     this.delBtn = $(element).find('.delete');
+    this.sortList = $(element).find('#sortable');
   
     this.init = function () {
         this.bindEvent();
@@ -21,12 +22,12 @@ function InputSet(element) {
         this.onClickSave();
         this.onClickReset();
         this.onClickComeback();
+        this.onSortList();
         //this.onRenderList();
     };
 
     this.onFocus = function () {
-        this.input.focus(function () {
-            
+        this.input.focus(function () {    
         });
     };
 
@@ -45,8 +46,9 @@ function InputSet(element) {
         });
     };
 
-    var i = 0;
+
     this.onClickSave = function () {
+            var i = 0;
         this.saveText.click(function () {
             if (!context.input.val()) {
                 console.log('No content');
@@ -58,7 +60,7 @@ function InputSet(element) {
                 context.alert.hide();
                 context.arraySaveString.push(context.input.val());
                 console.log('Add content : ' + context.input.val() + ' Array [' + i + ']');
-                context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.list.append('<div class="ui-state-default itemText itemText-' + i + '" data-index="' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
                 context.input.val('');
                 i++;
                 context.onDeleteEvent();
@@ -71,8 +73,6 @@ function InputSet(element) {
     //     context.onDeleteEvent();
 
     // }
-
-
 
     this.onDeleteEvent = function () {
         var deleteItem = [];
@@ -103,9 +103,22 @@ function InputSet(element) {
             console.log(context.arraySaveString.length + " hello");    
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 var inputTextVal = context.arraySaveString[i];
-                context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + inputTextVal + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.list.append('<div class="ui-state-default itemText itemText-' + i + '" data-index="'+i+'"><span class="text">' + inputTextVal + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
                 context.onDeleteEvent();
             }
+        });
+    };
+
+    this.onSortList = function () {
+        this.sortList.click(function () {
+            $(this).sortable({
+                placeholder: "ui-sortable-placeholder",
+                update: function (event, sender) {
+                    var sortedIDs = $(this).sortable('toArray', {attribute: 'data-index'});
+                    var indexRearange = sortedIDs.join(';');
+                    //console.log(indexRearange + sender.sender);
+                }
+            });
         });
     };
 
@@ -122,6 +135,7 @@ $(document).ready(function () {
     });
     console.log(inputs);
 });
+
 
 /*
 $('.itemText').on('load', function () {
