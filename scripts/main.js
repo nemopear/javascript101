@@ -36,19 +36,19 @@ function InputSet(element) {
             if (!$(this).val()) {
                 $(this).addClass('required');
                 context.inputContainer.addClass('hasError');
-                context.alert.show();
+                context.alert.show('fade', 100);
             }
             else {
                 $(this).removeClass('required');
                 context.inputContainer.removeClass('hasError');
-                context.alert.hide();
+                context.alert.hide('fade', 100);
             }
         });
     };
 
 
     this.onClickSave = function () {
-            var i = 0;
+        var i = 0;
         this.saveText.click(function () {
             if (!context.input.val()) {
                 console.log('No content');
@@ -82,7 +82,8 @@ function InputSet(element) {
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 if (getTextDelete === context.arraySaveString[i]) {
                     context.arraySaveString.splice(i,1);
-                    $(this).parents('.itemText').remove();
+                    $(this).parents('.itemText').remove()
+                    ;
                 }
                 else {
 
@@ -145,13 +146,3 @@ $(document).ready(function () {
     });
     console.log(inputs);
 });
-
-
-/*
-$('.itemText').on('load', function () {
-    console.log('sdasdas');
-    $('.delete').click(function () {
-        $(this).parent().remove();
-    });
-});
-*/
