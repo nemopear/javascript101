@@ -3,7 +3,7 @@
 window.onload = function () {
     var didScroll;
     var lastScrollTop = 0;
-    //var delta = 5;
+    var delta = 5;
     var navbarHeight = $('#mainMenu').outerHeight();
 
     $(window).scroll(function (event) {
@@ -22,8 +22,8 @@ window.onload = function () {
         var mainMenuHeight = $('#mainMenu').height();
 
         // Make sure they scroll more than delta
-        //if (Math.abs(lastScrollTop - st) <= delta)
-        //    return;
+        if (Math.abs(lastScrollTop - st) <= delta)
+            return;
 
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
@@ -52,6 +52,8 @@ window.onload = function () {
         lastScrollTop = st;
     }
 
+
+
 };
 
 function sticky_relocate() {
@@ -70,13 +72,14 @@ $(function () {
     sticky_relocate();
 });
 
-window.onload = function () {
+
+$(document).ready(function () {
     $('#bodyContainer').click(function () {
         if ($('.navbar-collapse').hasClass('in')) {
             $("button.navbar-toggle").click();
         }
         else {
-            //$('.navbar-collapse').removeClass('collapsing');
+
         }
     });
-};
+});
