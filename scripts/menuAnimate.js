@@ -73,7 +73,10 @@ $(function () {
 window.onload = function () {
     $('#bodyContainer').click(function () {
         if ($('.navbar-collapse').hasClass('in')) {
-            $('.navbar-collapse').removeClass('in');
+            $("button.navbar-toggle").click();
+        }
+        else {
+            //$('.navbar-collapse').removeClass('collapsing');
         }
     });
 };
