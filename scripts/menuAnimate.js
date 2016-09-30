@@ -37,8 +37,13 @@ window.onload = function () {
         } else {
             // Scroll Up
             $('#mainMenu').removeClass('nav-up').addClass('nav-down');
+            $('.nav-down').css({ top: '0' });
+
+
             if (st + $(window).height() < $(document).height()) {
                 $('#mainMenu').removeClass('nav-up').addClass('nav-down');
+                $('.nav-down').css({ top: '0' });
+
             }
             else if (st < mainMenuHeight) {
                 $('.nav-down').css({ top: '0' });
@@ -60,7 +65,6 @@ function sticky_relocate() {
     else {
         $('#stickyMenu').removeClass('minimize');
     }
-
 };
 
 $(function () {
