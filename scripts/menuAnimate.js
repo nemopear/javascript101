@@ -12,10 +12,8 @@ window.onload = function () {
 
     setInterval(function () {
         if (didScroll) {
-            //console.log('123');
             hasScrolled();
             didScroll = false;
-
         }
     }, 250);
 
@@ -71,3 +69,11 @@ $(function () {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
 });
+
+window.onload = function () {
+    $('#bodyContainer').click(function () {
+        if ($('.navbar-collapse').hasClass('in')) {
+            $('.navbar-collapse').removeClass('in');
+        }
+    });
+};
