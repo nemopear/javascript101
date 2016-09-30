@@ -1,54 +1,3 @@
-// Hide Header on on scroll down
-
-window.onload = function () {
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
-    var navbarHeight = $('#mainMenu').outerHeight();
-
-    $(window).scroll(function (event) {
-        didScroll = true;
-    });
-
-    setInterval(function () {
-        if (didScroll) {
-            //console.log('123');
-            hasScrolled();
-            didScroll = false;
-
-        }
-    }, 250);
-
-    function hasScrolled() {
-        var st = $(window).scrollTop();
-
-        // Make sure they scroll more than delta
-        if (Math.abs(lastScrollTop - st) <= delta)
-            return;
-
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight) {
-            // Scroll Down
-            $('#mainMenu').removeClass('nav-down').addClass('nav-up');
-            console.log('1453')
-        } else {
-            // Scroll Up
-            $('#mainMenu').removeClass('nav-up').addClass('nav-down');
-            if (st + $(window).height() < $(document).height()) {
-                $('#mainMenu').removeClass('nav-up').addClass('nav-down');
-            }
-        }
-
-        lastScrollTop = st;
-    }
-};
-
-
-
-
-
-
 ///////////////////////////// Input Function
 function InputSet(element) {
     var context;
@@ -118,6 +67,8 @@ function InputSet(element) {
             }
         });
     };
+
+    // Todo render HTML
 
     // this.onRenderList = function() {
     //     context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
