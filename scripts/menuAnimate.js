@@ -1,5 +1,4 @@
 ﻿// Hide Header on on scroll down
-
 window.onload = function () {
     var didScroll;
     var lastScrollTop = 0;
@@ -51,9 +50,6 @@ window.onload = function () {
 
         lastScrollTop = st;
     }
-
-
-
 };
 
 function sticky_relocate() {

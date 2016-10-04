@@ -46,9 +46,9 @@ function InputSet(element) {
         });
     };
 
+    // Todo render HTML
 
     this.onClickSave = function () {
-        var i = 0;
         this.saveText.click(function () {
             if (!context.input.val()) {
                 console.log('No content');
@@ -59,22 +59,20 @@ function InputSet(element) {
                 context.inputContainer.removeClass('hasError');
                 context.alert.hide();
                 context.arraySaveString.push(context.input.val());
-                console.log('Add content : ' + context.input.val() + ' Array [' + i + ']');
-                context.list.append('<div class="ui-state-default itemText itemText-' + i + '" data-index="' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.onRenderList(context.arraySaveString.length, context.input.val());
+                //context.list.find('.itemText').addClass('animated animatedFast fadeIn');
                 context.input.val('');
-                i++;
                 context.onDeleteEvent();
             }
         });
     };
 
-    // Todo render HTML
-
-    // this.onRenderList = function() {
-    //     context.list.append('<div class="itemText itemText-' + i + '"><span class="text">' + context.input.val() + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
-    //     context.onDeleteEvent();
-
-    // }
+    this.onRenderList = function (i, j) {
+        console.log('Get i ' + i);
+        console.log(j);
+        context.list.append('<div class="ui-state-default itemText itemText-' + i + ' animated animatedFast fadeInUp" data-index="' + i + '"><span class="text">' + j + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+        context.onDeleteEvent();
+    }
 
     this.onDeleteEvent = function () {
         var deleteItem = [];
@@ -84,8 +82,11 @@ function InputSet(element) {
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 if (getTextDelete === context.arraySaveString[i]) {
                     context.arraySaveString.splice(i,1);
-                    $(this).parents('.itemText').remove()
-                    ;
+                    //$(this).parents('.itemText').remove();
+                    $(this).parents('.itemText').removeClass('fadeIn').addClass('fadeOutRight');
+                    setTimeout(function () {
+                        context.list.find('.fadeOutRight').remove();
+                    }, 300);
                 }
                 else {
 
@@ -106,7 +107,7 @@ function InputSet(element) {
             console.log(context.arraySaveString.length + " hello");    
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 var inputTextVal = context.arraySaveString[i];
-                context.list.append('<div class="ui-state-default itemText itemText-' + i + '" data-index="'+i+'"><span class="text">' + inputTextVal + '</span><a href="#" class="delete label label-danger">Delete</a></div>');
+                context.onRenderList(i, inputTextVal);
                 context.onDeleteEvent();
             }
         });
