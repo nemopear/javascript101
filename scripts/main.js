@@ -77,7 +77,8 @@ function InputSet(element) {
     this.onDeleteEvent = function () {
         var deleteItem = [];
         $(element).find('.delete').unbind('click');
-        $(element).find('.delete').bind('click', function () {
+        $(element).find('.delete').bind('click', function (a) {
+            a.preventDefault();
             var getTextDelete = $(this).siblings('.text').text();
             for (var i = 0; i < context.arraySaveString.length; i++) {
                 if (getTextDelete === context.arraySaveString[i]) {
