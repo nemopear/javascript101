@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<head>
+		<title>Animate</title>
+		<style>
+			.box {
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box">
+		
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			var box = $('.box');
+			var direction = 'down';
+			var boxHeight = $('.box').height();
+			$('body').keypress( function() {
+				var keyCtrl = $(this).val();
+				alert(keyCtrl);
+			});
+			setInterval(function(){
+				var currTop = box.css('top');
+				var currLeft = box.css('left');
+				
+				if(direction=='down') {
+					box.css('top', parseInt(currTop.replace('px','')) +1);
+				}
+				if(direction=='right') {
+					box.css('left', parseInt(currLeft.replace('px','')) +1);
+				}
+				if(direction=='up') {
+					box.css('top', parseInt(currTop.replace('px','')) -1);
+				}
+				if(direction=='left') {
+					box.css('left', parseInt(currLeft.replace('px','')) -1);
+				}
+				
+				if(parseInt(currTop.replace('px','')) + boxHeight > $(window).height()) {
+					direction = 'right';
+					console.log('R');
+				}
+				if(parseInt(currLeft.replace('px','')) + boxHeight > $(window).width()) {
+					direction = 'up';
+				}
+				if(parseInt(currTop.replace('px',''))<= 0 && parseInt(currLeft.replace('px','')) > 0) {
+					direction = 'left';
+				}
+				if(parseInt(currTop.replace('px',''))<= 0 && parseInt(currLeft.replace('px','')) <= 0) {
+					direction = 'down';
+				}
+
+			}, 1);
+		</script>
+	</body>
+</html>
