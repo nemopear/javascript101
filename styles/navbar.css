@@ -1,51 +1,3 @@
-.no-bullet {
-  list-style: none;
-  padding: 0; }
-
-.btnControl {
-  margin-top: 10px; }
-
-.well {
-  background-color: #3a4652;
-  margin-top: 20px;
-  overflow: hidden; }
-
-.alert {
-  display: none;
-  margin-top: 5px; }
-
-.form-control.required {
-  border: 2px solid #c9302c; }
-
-.listOfText {
-  margin-bottom: 50px; }
-
-.itemText {
-  display: block;
-  padding: 5px 0;
-  border-bottom: 1px solid #a0a0a0;
-  /*transition: opacity 0.4s ease-out;*/ }
-
-.delete {
-  display: inline-block;
-  float: right; }
-
-.animatedFast {
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.ball {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f0ad4e;
-  position: absolute; }
-
-.tabMenu > li {
-  display: inline-block; }
-
 body {
   padding-top: 83px; }
 
@@ -101,14 +53,3 @@ body.menuStickyDemo {
 
 #bodyContainer {
   padding-top: 83px; }
-
-.listBoxLink {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-
-.boxLinkItem {
-  width: 50%;
-  background-color: #eee;
-  color: #fff;
-  float: left; }
