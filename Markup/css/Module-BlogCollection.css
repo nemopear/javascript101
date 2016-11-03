@@ -1,0 +1,46 @@
+﻿.blogCollectionModule .blogCollectionHeader {
+  background-color: #d9232e;
+  padding: 20px 0;
+  position: relative;
+  color: #ffffff;
+  margin-bottom: 25px; }
+  .blogCollectionModule .blogCollectionHeader h3 {
+    color: #fff;
+    font-family: "opensansRegular";
+    padding-left: 15px; }
+  .blogCollectionModule .blogCollectionHeader p {
+    padding-left: 15px; }
+  .blogCollectionModule .blogCollectionHeader a.generalButton, .blogCollectionModule .blogCollectionHeader:focus {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-left: 7px;
+    display: block; }
+    .blogCollectionModule .blogCollectionHeader a.generalButton:nth-child(2n+2), .blogCollectionModule .blogCollectionHeader:focus:nth-child(2n+2) {
+      margin-top: 15px; }
+
+.blogCollectionModule .buttonModule {
+  text-align: center; }
+
+@media (min-width: 768px) {
+  .blogCollectionModule .blogCollectionHeader {
+    padding-bottom: 0;
+    padding-top: 5px; }
+    .blogCollectionModule .blogCollectionHeader h3 {
+      margin-top: 20px; }
+    .blogCollectionModule .blogCollectionHeader h3, .blogCollectionModule .blogCollectionHeader p {
+      padding-left: 5px; }
+    .blogCollectionModule .blogCollectionHeader a.generalButton, .blogCollectionModule .blogCollectionHeader:focus {
+      display: inline-block;
+      margin-left: 0;
+      width: 48%; }
+      .blogCollectionModule .blogCollectionHeader a.generalButton:nth-child(2n+2), .blogCollectionModule .blogCollectionHeader:focus:nth-child(2n+2) {
+        margin-left: 12px; } }
+
+@media (min-width: 992px) {
+  .blogCollectionModule .blogCollectionHeader a.generalButton {
+    width: 46%; }
+    .blogCollectionModule .blogCollectionHeader a.generalButton:nth-child(2n+2) {
+      margin-left: 30px; }
+  .blogCollectionModule .blogCollectionHeader img {
+    max-height: 165px; } }
+

@@ -1,0 +1,21 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.socialMediaModule  {
+    .addthis_sharing_toolbox {
+        display: inline-block;
+    }
+}
+
+@media (min-width: $tabletSize) {
+
+}
+
+@media (min-width: $labtopSize) {
+
+}
+
+@media (min-width: $DesktopSize) {
+
+}
+

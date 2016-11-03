@@ -1,0 +1,143 @@
+﻿@mixin font-face($name, $path) {
+	@font-face {
+        font-family: quote($name);
+        src: url(quote($path + ".eot")); /* IE9 Compat Modes */
+        src: url(quote($path + ".eot?#iefix")) format('embedded-opentype'), /* IE6-IE8 */
+             url(quote($path + ".woff2")) format('woff2'), /* Modern Browsers */
+             url(quote($path + ".woff")) format('woff'), /* Modern Browsers */
+             url(quote($path + ".ttf")) format('truetype');
+        font-style: normal;
+        font-weight: normal;
+    }
+}
+
+@mixin fontSizeLineHeight($font-size, $line-height){
+    font-size:$font-size;
+    line-height:$line-height;
+}
+
+@mixin position($position: relative, $top: auto, $right: auto, $bottom: auto, $left: auto, $z-index: 0){
+    position:$position;
+    top:$top;
+    right:$right;
+    bottom:$bottom;
+    left:$left;
+    z-index:$z-index;
+}
+
+@mixin border-radius($radius: 0) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transform($property: none) {
+    transform:$property;
+    -moz-transform:$property;
+    -webkit-transform:$property;
+    -o-transform:$property;
+    -ms-transform:$property;
+}
+
+@mixin transformOrigin($property: none) {
+    transform-origin:$property;
+    -moz-transform-origin:$property;
+    -webkit-transform-origin:$property;
+    -o-transform-origin:$property;
+    -ms-transform-origin:$property;
+}
+
+@mixin transition($property: none) {
+    transition:$property;
+    -moz-transition:$property;
+    -webkit-transition:$property;
+    -o-transition:$property;
+}
+
+@mixin transitionDelay($property: none) {
+    transition-delay:$property;
+    -moz-transition-delay:$property;
+    -webkit-transition-delay:$property;
+    -o-transition-delay:$property;
+}
+
+@mixin textEllipsis() {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+@mixin boxShadow($property: none) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
+@mixin flexbox() {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexDirection($property: column) {
+    -moz-flex-direction: $property;
+    -ms-flex-direction: $property;
+    -webkit-flex-direction: $property;
+    flex-direction: $property;
+}
+
+@mixin alignItems($property: center) {
+    -moz-align-items: $property;
+    -ms-align-items: $property;
+    -webkit-align-items: $property;
+    align-items: $property;
+}
+
+@mixin justifyContent($property: center) {
+    -moz-justify-content: $property;
+    -ms-justify-content: $property;
+    -webkit-justify-content: $property;
+   justify-content: $property;
+}
+
+@mixin opacity($value: 0, $valueIE: 0) {
+    -ms-filter: '"progid:DXImageTransform.Microsoft.Alpha(Opacity='+$valueIE+')"';
+    filter: alpha(opacity=$valueIE);
+    -moz-opacity: $value;
+    -khtml-opacity: $value;
+    opacity: $value;
+}
+
+@mixin user-select($property: none) {
+    -webkit-touch-callout: $property;
+    -webkit-user-select: $property;
+    -khtml-user-select: $property;
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    user-select: $property;
+}
+
+@mixin columnCount($value) {
+    -moz-column-count: $value;
+    -ms-column-count: $value;
+    -webkit-column-count: $value;
+   column-count: $value;
+}
+
+@mixin animationFillMode($property: none){
+    -webkit-animation-fill-mode: $property;
+    -moz-animation-fill-mode: $property;
+    -o-animation-fill-mode: $property;  
+    animation-fill-mode: $property;
+}
+
+@mixin breakAll() {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}

@@ -1,0 +1,216 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.imgBannerWrapper {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 250px;
+    > a { display: block;}
+    .imageDiv {
+        height: 250px;
+    }
+}
+.bannerInfoWrapper {
+    @include position(absolute, 50%, auto, auto, auto, 1);
+    @include transform(translateY(-50%));
+    width: 100%;
+    text-align: center;
+}
+.bannerInfoBg {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: inline-block;
+    color: #fff;
+    font-family: 'opensansRegular';
+    padding: 15px 20px;
+    margin: 0 15px;
+}
+.bannerTitle {
+    font-family: 'opensansRegular';
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 0;
+    max-height: 48px;
+}
+
+.bannerWithDescription {
+    .bannerTitle {
+        margin-bottom: 15px;
+        max-height: 44px;
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+
+.bannerDescription {
+    max-height: 108px;
+    margin: 0;
+}
+
+/*workWithSection*/
+.workWithListContainer {
+    background-color: $darkGrey;
+}
+.workWithItem {
+    text-align: center;
+    padding: 1px;
+    .workWithImage img {
+        width: auto;
+        display: inline-block;
+    }
+} 
+.workWithList {
+    padding: 7px 25px;
+    position: relative;
+
+    .owl-stage {
+        @include flexbox();
+        @include alignItems(center);
+    }
+    .owl-nav { 
+        position: absolute;
+        top: 13px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+    }
+    .owl-next, .owl-prev {
+        position: absolute;
+        top: 0 !important;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        background-color: #000;
+        @include border-radius(50%);
+        i {
+            position: relative;
+            font-size: 9px;
+            top: -5px;
+            color: $darkGrey1;
+        }
+    }
+    .owl-next {
+        right: 0;
+    }
+}
+
+.workWithImage {
+    img {
+        max-height: 25px;
+    }
+}
+
+/*redBar*/
+.redBarWrapper {
+    background-color: $bgRed;
+    padding: 11px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    &:after {
+        content: '\00a0';
+        width: 0;
+        height: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 14px solid $bgRed;
+        @include position(absolute, auto, auto, -10px, 50%, 1);
+        @include transform(translateX(-50%));
+    }
+    .redBarTitle {
+        color: #fff;
+        font-family: 'opensansBold';
+        font-size: 15px;
+        margin: 0;
+    }
+}
+
+.redBarTitle {
+    max-height: 38px;
+}
+
+@media (min-width: $tabletSize) {
+    .bannerInfoBg {
+        padding: 23px 15px;
+        margin: 20px 0;
+        width: 620px;
+    }
+    .bannerTitle {
+        font-size: 26px;
+        line-height: 26px;
+        max-height: 78px;
+    }
+    .bannerWithDescription {
+        .bannerTitle {
+            margin: 23px 0 20px;
+            max-height: 52px;
+            font-size: 26px;
+            line-height: 26px;
+        }
+        .bannerInfoBg {
+            padding: 23px 15px 40px;
+        }
+    }
+    .bannerDescription {
+        max-height: 54px;
+    }
+    .imgBannerWrapper{
+        height: 285px;
+        .imageDiv {
+            height: 285px;
+        }
+    }
+    .workWithList {
+        position: relative;
+        padding: 15px 45px;
+        .owl-nav { 
+            top: 28px;
+        }
+        .owl-next, .owl-prev {
+            width: 27px;
+            height: 27px;
+            i {
+                top: 4px;
+                font-size: 15px;
+            }
+        }
+        .owl-next {
+            right: 0;
+        }
+    }
+    .workWithImage {
+        img {
+            max-height: none;
+        }
+    }
+    .redBarWrapper {
+        padding: 23px 0;
+        &:after {
+            bottom: -14px;
+        }
+        .redBarTitle {
+            font-size: 30px;
+        }
+    }
+    .redBarTitle {
+        max-height: 78px;
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .bannerInfoBg {
+        width: 610px;
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .bannerInfoBg {
+        width: 650px;
+    }
+    .bannerDescription {
+        max-height: 90px;
+    }
+}
+

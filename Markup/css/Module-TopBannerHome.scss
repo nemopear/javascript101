@@ -1,0 +1,170 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.topBannerHomeModule {
+    .imgBannerWrapper {
+        max-height: 585px;
+        min-height: 285px;
+        height: auto;
+        img {
+            left: 100%;
+            width: 100%!important;
+        }
+    }
+}
+
+.topBannerHomeModule {
+    .teaserBoxWrapper {
+        @include position(absolute, 0, 0, 0, 0, 1);
+        background-color:rgba(0, 0, 0, 0.5);
+        .boxLinkModule {
+            @include position(absolute, 0, 0, 0, 0, 3);
+            /*@include transform(translateY(-50%));*/
+        }
+    }
+    .boxLinkItem {
+        background-color: $bgRed;
+        &:hover, &:focus, &:active {
+            background-color: $bgBlack;
+            color: #fff;
+        }
+    }
+    .boxLinkItem:nth-child(2n) {
+        background-color: #990000;
+        &:hover, &:focus, &:active {
+            background-color: $bgBlack;
+            color: #fff;
+        }
+    }
+    .boxLinkTitle {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+}
+@media (max-width: 767px) {
+    .topBannerHomeModule {
+        .boxLinkModule {
+            @include transform(initial);
+            position: static;
+        }
+        .boxLinkItem {
+            height: auto !important;
+            width: 100%;
+            margin: 0;
+            .boxLinkTitle {
+                padding: 24px 10px;
+                max-height: none;
+                font-size: 12px;
+                &:after {
+                    content: '\003e';
+                    padding-left: 2px;
+                }
+            }
+        }
+        .boxLinkTitleWrapper {
+            @include transform(none);
+            position: static;
+            padding: 0;
+        }
+        .teaserBoxWrapper {
+            position: static;
+            .boxLinkModule {
+                @include transform(none);
+                position: static;
+            }
+        }
+        .imgBanner {
+            display: none;
+        }
+
+        .buttonModule .generalButton {
+            @include position(absolute, 0, 0, 0, 0, 1);
+            @include opacity(0);
+            max-width: none;
+        }
+    }
+
+}
+
+@media (min-width: $tabletSize) {
+    .topBannerHomeModule {
+        .imgBanner { min-width: 1030px;}
+    }
+
+    .topBannerHomeModule {
+        .boxLinkTitle {
+            font-size: 14px;
+            line-height: 16px;
+            /*max-height: 48px;*/
+        }
+        .boxLinkModule {
+            background-color: transparent;
+            &:before {
+                content: '\00a0';
+                position: absolute;
+                width: 100%;
+                background-color:rgba(0, 0, 0, 0.5);
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+        .boxLinkItem, .boxLinkItem:nth-child(2n) {
+            background-color: rgba(121, 121, 121, 0.56);
+            &:hover, &:focus, &:active {
+                background-color: rgba(121, 121, 121, 0.56);
+            }
+        }
+        .boxLinkItem:nth-child(1), .boxLinkItem:nth-child(3), 
+        .boxLinkItem:nth-child(6), .boxLinkItem:nth-child(8) {
+            background-color: rgba(255, 16, 16, 0.46);
+            &:hover, &:focus, &:active {
+                background-color: rgba(255, 16, 16, 0.46);
+            }
+        }
+        .boxLinkTitleWrapper {
+            margin-top: 20px;
+        }
+        .buttonModule {
+            @include transition(opacity 0.1s ease-in-out);
+            @include opacity(0);
+            margin-top: 20px;
+            display: block;
+            .generalButton {
+                width: auto;
+                position: static;
+            }
+        }
+        .boxLinkItem {
+            &:hover, &:active, &:focus {
+                .buttonModule {
+                    @include opacity(1);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .topBannerHomeModule {
+        .imgBanner { min-width: 1330px;}
+        .boxLinkTitle {
+            font-size: 18px;
+            line-height: 19px;
+            /*max-height: 60px;*/
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .topBannerHomeModule {
+        .imgBanner { min-width: 1600px;}
+        .boxLinkTitle {
+            font-size: 22px;
+            line-height: 22px;
+            /*max-height: 66px;*/
+        }
+    }
+}
+

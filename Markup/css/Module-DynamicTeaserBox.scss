@@ -1,0 +1,441 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.boxLinkModule {
+    > .container {
+        padding: 0;
+    }
+}
+.listBoxLink  {
+    margin: 0;
+    overflow: hidden;
+}
+.boxItem4 {
+    .boxLinkItem {
+        width: 50%;
+    }
+}
+.boxLinkTitleWrapper {
+    @include transform(translate(-50%, -50%));
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+}
+.boxLinkItem {
+    color: #fff;
+    float: left;
+    padding: 0;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+    .boxLinkTitle {
+        text-transform: uppercase;
+        font-family: 'opensansSemibold';
+        display: block;
+        width: 100%;
+    }
+    &:nth-child(2n+1) {
+        clear: both;
+    }
+    &:first-child, &:nth-child(2),  {
+        margin-top: 0;
+    }
+}
+.boxLinkTitle {
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 3px;
+    padding: 0 15px;
+}
+.boxLinkItem {
+    background-color: #b70000;
+    &:nth-child(2n) {
+        background-color: #990000;
+    }
+}
+.boxLinkItem, .boxLinkItem:nth-child(2n) {
+    @include transition(all 0.5s ease);
+    &:hover, &:active, &:focus, &.active {
+        background-color: $bgBlack;
+    }
+}
+
+.boxLinkTitleHover {
+    padding: 0;
+}
+
+.boxLinkDescription {
+    margin: 15px 0 0;
+    width: 100%;
+}
+.BoxLinkHover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: $darkGrey;
+    color: #fff;
+    @include opacity(0);
+    text-align: center;
+    @include transition(all 0.3s ease-in-out);
+    .textWrapper {
+        @include transform(translate3d(0,7px,0));
+        @include transition(all 0.3s ease-in-out 0.1s);
+        @include flexbox();
+        @include flexDirection(column);
+        @include alignItems(center);
+        @include justifyContent(center);
+        @include opacity(0);
+        height: 100%;
+   
+    }
+    .boxLinkTitle {
+        text-decoration: underline;
+        line-height: 16px;
+        padding: 0;
+    }
+    .buttonModule {
+        max-width: 100%;
+        margin: 15px auto 0;
+        a {
+            font-size: 11px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+        }
+    }
+}
+.BoxLinkHover:hover {
+    @include opacity(1);
+    .textWrapper {
+        @include transform(translate3d(0,0,0));
+        @include opacity(1);
+    }
+}
+.boxItem3 {
+    .boxLinkItem {
+        width: 100%;
+        margin: 0;
+        background-color: #990000;
+        &:nth-child(2n) {
+            background-color: #b70000;
+        }
+    }
+    .boxLinkTitle {
+        font-size: 25px;
+        line-height: 26px;
+    }
+}
+
+/*set Height form dotdotdot*/
+.boxItem4 {
+    .boxLinkTitle {
+        max-height: 65px;
+    }
+    .boxLinkTitleHover {
+        max-height: 48px;
+    }
+    .boxLinkDescription {
+        max-height: 36px;
+    }
+}
+
+.boxItem3 {
+    .boxLinkTitle {
+        max-height: 130px;
+    }
+    .boxLinkTitleHover {
+        max-height: 78px;
+    }
+    .boxLinkDescription {
+        max-height: 54px;
+    }
+}
+
+.boxItem4 {
+    .itemLongDescription {
+        .boxLinkTitleHover {
+            max-height: 32px;
+        }
+        .boxLinkDescription {
+            max-height: 54px;
+        }
+    }
+}   
+
+.boxItem3 {
+    .itemLongDescription {
+        .boxLinkTitleHover {
+            max-height: 52px;
+        }
+        .boxLinkDescription {
+            max-height: 180px;
+        }
+    }
+}
+
+
+
+@media (min-width: $tabletSize) {
+    .boxLinkModule {
+        background-color: #d9232e;
+    }
+    .boxLinkItem > .container {
+        padding: 0 15px;
+    }
+    .boxLinkItem {
+        margin-top: 0;
+        width: 188px;
+        &:nth-child(2n+1) {
+            clear: none;
+        }
+    }
+    .boxItem3 .boxLinkItem {
+        width: 33.333333%;
+        /*max-height: 250px;*/
+    }
+    .boxItem4 .boxLinkItem {
+        width: 25%;
+        /*max-height: 188px;*/
+    }
+    .boxLinkTitle {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .BoxLinkHover {
+        .boxLinkTitle {
+            line-height: 20px;
+        }
+    }
+
+    /*3 boxes*/
+    .boxItem3 {
+        .BoxLinkHover {
+            padding: 35px 20px;
+        }
+        .boxLinkDescription, .buttonModule {
+            margin-top: 20px;
+        }
+        .boxLinkTitle {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+    /*set Height form dotdotdot*/
+    .boxItem4 {
+        .boxLinkTitle {
+            max-height: 81px;
+        }
+        .boxLinkTitleHover {
+           max-height: 60px;
+        }
+        .boxLinkDescription {
+            max-height: 36px;
+        }
+    }
+
+    .boxItem3 {
+        .boxLinkTitle {
+            max-height: 90px;
+        }
+        .boxLinkTitleHover {
+           max-height: 72px;
+        }
+        .boxLinkDescription {
+            max-height: 72px;
+        }
+    }
+    .boxItem4 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 40px;
+            }
+            .boxLinkDescription {
+                max-height: 72px;
+            }
+        }
+    }   
+    .boxItem3 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 36px;
+            }
+            .boxLinkDescription {
+                max-height: 108px;
+            }
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .boxLinkTitle {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .BoxLinkHover {
+        .boxLinkTitle {
+            line-height: 24px;
+        }
+        .buttonModule {
+            max-width: 170px;
+        }
+    }
+    .boxLinkItem {
+        width: 243px;
+    }
+    .boxItem4 .boxLinkItem {
+        /*max-height: 243px;*/
+    }
+    /*3 boxes*/
+    .boxItem3 {
+        .BoxLinkHover {
+            padding: 55px 30px;
+        }
+        .boxLinkDescription, .buttonModule {
+            margin-top: 25px;
+        }
+        .boxLinkTitle {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        .boxLinkItem {
+            /*max-height: 323px;*/
+        }
+    }
+    /*set Height form dotdotdot*/
+    .boxItem4 {
+        .boxLinkTitle {
+            max-height: 100px;
+        }
+        .boxLinkTitleHover {
+           max-height: 72px;
+        }
+        .boxLinkDescription {
+            max-height: 90px;
+        }
+    }
+
+    .boxItem3 {
+        .boxLinkTitle {
+            max-height: 120px;
+        }
+        .boxLinkTitleHover {
+           max-height: 96px;
+        }
+        .boxLinkDescription {
+            max-height: 90px;
+        }
+    }
+    .boxItem4 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 48px;
+            }
+            .boxLinkDescription {
+                max-height: 108px;
+            }
+        }
+    }
+    .boxItem3 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 48px;
+            }
+            .boxLinkDescription {
+                max-height: 126px;
+            }
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .listBoxList {
+        margin: 0 -20px;
+    }
+    .boxLinkTitle {
+        font-size: 24px;
+        line-height: 22px;
+    }
+    .BoxLinkHover {
+        padding: 25px;
+        .boxLinkTitle {
+            line-height: 26px;
+        }
+        .buttonModule {
+            margin-top: 25px;
+        }
+    }
+    .boxLinkItem {
+        width: 293px;
+    }
+    .boxItem4 .boxLinkItem {
+        /*max-height: 293px;*/
+    }
+    /*3 boxes*/
+    .boxItem3 {
+        .BoxLinkHover {
+            padding: 15px 65px;
+        }
+        .boxLinkDescription, .buttonModule {
+            margin-top: 35px;
+        }
+        .boxLinkItem {
+            /*max-height: 390px;*/
+        }
+    }
+
+    /*set Height form dotdotdot*/
+    .boxItem4 {
+        .boxLinkTitle {
+            max-height: 110px;
+        }
+        .boxLinkTitleHover {
+            max-height: 104px;
+        }
+        .boxLinkDescription {
+            max-height: 72px;
+        }
+    }
+
+    .boxItem3 {
+        .boxLinkTitle {
+            max-height: 120px;
+            padding: 0 25px;
+        }
+        .boxLinkTitleHover {
+           max-height: 104px;
+           padding: 0;
+        }
+        .boxLinkDescription {
+            max-height: 108px;
+        }
+    }
+    .boxItem4 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 52px;
+            }
+            .boxLinkDescription {
+                max-height: 144px;
+            }
+        }
+    }
+    .boxItem3 {
+        .itemLongDescription {
+            .boxLinkTitleHover {
+                max-height: 52px;
+            }
+            .boxLinkDescription {
+                max-height: 198px;
+            }
+        }
+    }
+}
+

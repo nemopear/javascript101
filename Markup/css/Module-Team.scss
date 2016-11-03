@@ -1,0 +1,186 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.teamModule {
+    margin: 0 -15px;
+}
+
+.listStaff {
+    overflow: hidden;
+    max-width: 586px;
+    margin: 0 auto;
+}
+
+.staffItem {
+    float: left;
+    width: 49.75%;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.staffNameHover {
+    z-index: 1;
+    color: #fff;
+    margin-top: 55px;
+    font-size: 13px;   
+    line-height: 14px;
+    text-align: center;
+    font-family: "opensansRegular";
+    padding: 10px;
+    margin: 0;
+    word-break: break-word;
+    height: 62px;
+    width: 100%;
+}
+
+.staffName {
+    @include position(absolute, auto, 0, 0, 0, 1);
+    @include transition(opacity ease-in-out 0.3s);
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: "opensansRegular";
+    font-size: 10px;
+    background: rgba(197, 8, 9, 0.65);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.imgStaffEffect {  
+    @include position(absolute, 0, 0, 0, 0, 0);
+}
+
+.staffHover {
+    @include position(absolute, auto, 0, 0, 0, 1);
+    @include flexbox();
+    @include flexDirection(column);
+    @include justifyContent(space-around);
+    opacity: 0;
+    height: 0;
+    width: 100%;
+    transition: opacity ease-in-out 0.5s, height ease-in-out 0.5s;
+    -moz-transition: opacity ease-in-out 0.5s, height ease-in-out 0.5s;
+    -webkit-transition: opacity ease-in-out 0.5s, height ease-in-out 0.5s;
+    -o-transition: opacity ease-in-out 0.5s, height ease-in-out 0.5s;
+}
+
+.staffItem.active {
+    .staffHover {
+        opacity: 1;
+        height: 100%;
+    } 
+    .staffName {
+        opacity: 0;
+    }
+}
+
+.mask {
+    @include position(absolute, 0, 0, 0, 0, 0);
+    background: rgba(197, 8, 9, 0.65);
+    width: 100%;
+}
+
+.staffItem {
+    .listButton {
+        position: relative;
+        max-width: 190px;
+        margin: 0 auto;
+        padding: 0 10px;
+        width: 100%;
+    }
+    .itemButtom {
+        margin-bottom: 10px;
+        padding: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .generalButton {
+        font-size: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .teamModule {
+        margin: 0;
+    }
+    .listStaff {
+        max-width: none;
+    }
+    .staffItem {
+        width: 33.333333%;
+    }
+    .staffNameHover {
+        padding: 40px 30px;
+        font-size: 20px;   
+        line-height: 20px;
+        height: 140px;
+    }
+    .staffHover {
+        display: block;
+    }
+    .staffItem .itemButtom { margin-bottom: 20px;}
+    .staffItem .generalButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .staffItem {
+        width: 25%;
+    }
+    .staffName {
+        font-size: 15px;
+    }
+    .staffNameHover {
+        font-size: 21px;
+        line-height: 21px;
+        padding: 35px 30px;
+        height: 133px;
+    }
+
+    /*button link*/
+    .staffItem {
+        .listButton {
+            max-width: 160px;
+        }
+        .itemButton {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .staffName {
+        font-size: 17px;
+    }
+    .staffNameHover {
+        font-size: 25px;
+        line-height: 24px;
+        height: 162px;
+        padding: 45px 30px;
+    }
+
+    /*button link*/
+    .staffItem {
+        .listButton {
+            max-width: 190px;
+        }
+        .itemButton {
+            margin-bottom: 30px;
+        }
+    }
+
+}
+

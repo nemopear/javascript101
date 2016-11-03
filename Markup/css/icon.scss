@@ -1,0 +1,68 @@
+﻿@font-face {
+  font-family: 'kwc';
+  src:  url('fonts/kwc.eot?6dupov');
+  src:  url('fonts/kwc.eot?6dupov#iefix') format('embedded-opentype'),
+    url('fonts/kwc.ttf?6dupov') format('truetype'),
+    url('fonts/kwc.woff?6dupov') format('woff'),
+    url('fonts/kwc.svg?6dupov#kwc') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="iconFont-"], [class*=" iconFont-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'kwc' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconFont-i-arrow-filter:before {
+  content: "\e900";
+}
+.iconFont-i-arrow-left:before {
+  content: "\e901";
+}
+.iconFont-i-arrow-right:before {
+  content: "\e902";
+}
+.iconFont-i-circle-arrow-left:before {
+  content: "\e903";
+}
+.iconFont-i-circle-arrow-right:before {
+  content: "\e904";
+}
+.iconFont-i-letter:before {
+  content: "\e905";
+}
+.iconFont-i-menu:before {
+  content: "\e906";
+}
+.iconFont-i-phone:before {
+  content: "\e907";
+}
+.iconFont-i-plane:before {
+  content: "\e908";
+}
+.iconFont-i-sns-fb:before {
+  content: "\e909";
+}
+.iconFont-i-sns-in:before {
+  content: "\e90a";
+}
+.iconFont-i-sns-mail:before {
+  content: "\e90b";
+}
+.iconFont-i-sns-tweet:before {
+  content: "\e90c";
+}
+.iconFont-i-sns-youtube:before {
+  content: "\e90d";
+}

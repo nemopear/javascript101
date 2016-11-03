@@ -1,0 +1,66 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+.cookieAlert {
+    background: rgba($darkRed, 0.9);
+    max-height:100%;
+    overflow-y:auto;
+    width:100%;
+    color:#ffffff;
+    @include position(fixed, auto, auto, 0, auto, 999);
+    &.top{
+        top:0;
+        bottom:auto;
+    }
+    .cookieAlertContent{
+        padding-top:32px;
+        padding-bottom:32px;
+        padding-left:15px;
+        padding-right:15px;
+        p{
+            font-size:14px;
+            &:last-of-type{
+                margin-bottom:0;
+            }
+        }
+        a {
+            color:#ffffff;
+        }
+        .generalButton{
+            font-size:14px;
+            color:#ffffff;
+            border-color:#ffffff;
+            text-transform:none;
+            margin-top:10px;
+            &:hover{
+                color:$darkRed;
+                border-color:$darkRed;
+                background:#ffffff;
+            }
+        }
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .cookieAlert {
+        .cookieAlertContent{
+            padding-left:33px;
+            padding-right:33px;
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .cookieAlert {
+        padding: 22px 0;
+        .cookieAlertContent{
+            padding-left:15px;
+            padding-right:15px;
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    
+}
+
+

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>KWC</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jasny-bootstrap.css" />
+    <link rel="stylesheet" href="css/select2.css" />
+    <link rel="stylesheet" href="css/Style.min.css"/>
+</head>
+<body>
+    <div class="mainContentContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="manaoform module">
+                        <div class="formContainer">
+                            <form class="clearfix" action="">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 halfwidth"> <!-- 'halfwidth' class for 50% width column -->
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="text" id="company" name="company" class="form-control" placeholder="Name" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 halfwidth">
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                        <div class="form-group phone">
+                                            <em>*</em>
+                                            <input type="tel" id="tel" name="tel" class="form-control" placeholder="Phone" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 fullWidth">
+                                        <div class="form-group textarea">
+                                            <em>*</em>
+                                            <div class="input-section">
+                                                <textarea class="form-control" id="textArea" name="textArea" placeholder="Enquiry"></textarea>
+                                                <div class="fieldDescription">Please specify the programme or service where possible</div>
+                                                <div class="alert alert-danger error-require" role="alert">
+                                                    Require
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group dropdown">
+                                            <em>*</em>
+                                            <div class="input-section">
+                                                <select class="form-control chosen-select" data-placeholder="Select please" id="select" name="select">
+                                                    <option value=""></option>
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                </select>
+                                                <div class="alert alert-danger error-require" role="alert">
+                                                    Require
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control fileuploadBox" data-trigger="fileinput">
+                                                    <span class="fileinput-filename fileUploadText">Single Upload file</span>
+                                                </div>
+                                                <span class="input-group-addon btn btn-default btn-file fileUploadBtnFile">
+                                                    <span class="fileinput-new">Attach</span>
+                                                    <span class="fileinput-exists">Change Upload file</span>
+                                                    <input type="file" id="upload" name="upload" data-maxfilesize="5000">
+                                                </span>
+                                            </div>
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                            <div class="alert alert-danger error-invalid" role="alert">
+                                                Invalid
+                                            </div>
+                                            <div class="alert alert-danger error-overMaxSize" role="alert">
+                                                File size
+                                            </div>
+                                        </div>
+                                        <div class="form-group checkbox-group">
+                                            <div class="checkbox-group-container clearfix">
+                                                <div class="label-section">
+                                                    <label>Check box <em>*</em></label>
+                                                </div>
+                                                <div class="checkbox-form clearfix">
+                                                    <div class="checkboxWrapper">
+                                                        <input type="checkbox" id="check1" name="check1" value="Checkbox 1" class="input-checkbox" />
+                                                        <label for="check1" class="checkbox-label">Checkbox 1</label>
+                                                    </div>
+                                                    <div class="checkboxWrapper">
+                                                        <input type="checkbox" id="check2" name="check2" value="Checkbox 2" class="input-checkbox" />
+                                                        <label for="check2" class="checkbox-label">Checkbox 1</label>
+                                                    </div>
+                                                    <div class="checkboxWrapper">
+                                                        <input type="checkbox" id="check3" name="check3" value="Checkbox 3" class="input-checkbox" />
+                                                        <label for="check3" class="checkbox-label">Checkbox 1</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                        <div class="form-group radio-group">
+                                            <div class="radio-group-container clearfix">
+                                                <div class="label-section">
+                                                    <label>Radio box <em>*</em></label>
+                                                </div>
+                                                <div class="radio-form clearfix">
+                                                    <div class="checkboxWrapper">
+                                                        <input type="radio" id="radio1" name="radio1" value="Radio 1" class="input-checkbox" />
+                                                        <label for="radio1" class="checkbox-label">Radio 1</label>
+                                                    </div>
+                                                    <div class="checkboxWrapper">
+                                                        <input type="radio" id="radio2" name="radio1" value="Radio 2" class="input-checkbox" />
+                                                        <label for="radio2" class="checkbox-label">Radio 2</label>
+                                                    </div>
+                                                    <div class="checkboxWrapper">
+                                                        <input type="radio" id="radio3" name="radio1" value="Radio 3" class="input-checkbox" />
+                                                        <label for="radio3" class="checkbox-label">Radio 3</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 fullWidth">
+                                        <div class="form-group">
+                                            <div class="requiredWarning">*Required</div>
+                                            <button type="submit" id="" class="generalButton redButton submitForm">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="manaoform module">
+                        <div class="formContainer">
+                            <form class="clearfix" action="">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 halfwidth"><!-- 'halfwidth' class for 50% width column -->
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="text" id="company" name="company" class="form-control" placeholder="Name" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <em>*</em>
+                                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+                                            <div class="alert alert-danger error-require" role="alert">
+                                                Require
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 halfwidth">
+                                        <div class="form-group textarea">
+                                            <em>*</em>
+                                            <div class="input-section">
+                                                <textarea class="form-control" id="textArea" name="textArea" placeholder="Enquiry"></textarea>
+                                                <div class="fieldDescription">Please specify the programme or service where possible</div>
+                                                <div class="alert alert-danger error-require" role="alert">
+                                                    Require
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 fullWidth">
+                                        <div class="form-group">
+                                            <div class="requiredWarning">*Required</div>
+                                            <button type="submit" id="" class="generalButton redButton submitForm">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/select2.full.min.js"></script>
+    <script type="text/javascript" src="scripts/Module-Form.js"></script>
+</body>
+</html>

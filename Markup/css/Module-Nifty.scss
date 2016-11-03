@@ -1,0 +1,240 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.listNifty {
+    margin-top: 30px;
+    margin-left:-15px;
+    margin-right:-15px;
+}
+
+.niftyModule {
+    text-align: center;
+}
+
+.niftyItem {
+    width: 100%;
+    min-height: 160px;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.niftyItemContainer{
+    background-color: $bgRed;
+    padding: 25px;
+    position: relative;
+    height: 160px;
+}
+.niftyHover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: $darkGrey;
+    color: #fff;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+    .niftyTitle {
+        margin-bottom: 10px;
+        max-height: 32px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .buttonModule {
+        max-width: 170px;
+        margin: 15px auto 0;
+        a {
+            font-size: 11px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+        }
+    }
+    .textWrapper {
+        opacity: 0;
+        width: 100%;
+        padding:0 20px;
+        backface-visibility:hidden;
+        @include position(absolute, 60%, auto, auto, 0, 1);
+        @include transform(translateY(-50%));
+        @include transition((opacity 0.3s ease-in-out 0.1s, top 0.3s ease-in-out 0.1s));
+    }
+}
+
+.niftyHover:hover {
+    opacity: 1;
+    .textWrapper {
+        top:50%;
+        opacity: 1;
+    }
+}
+
+.niftyDescription {
+    max-height: 54px;
+}
+
+.niftyTitle {
+    color: #fff;
+    font-size: 15px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-family: 'opensansSemibold';
+    margin: 0 auto;
+    max-height: 48px;
+}
+
+.niftyIcon {
+    height: 70px;
+    margin: 0 auto;
+    i {
+        color: #fff;
+        font-size: 50px;
+    }
+}
+
+.img-icon {
+    width: 60px;
+    height: auto;
+}
+
+.grid-section {
+    .niftyModule .container {
+        padding: 0;
+        width: auto;
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .listNifty{
+        font-size:0;
+        margin:35px -31px 0;
+    }
+    .niftyItem {
+        width: 50%;
+        max-width: none;
+        margin-bottom: 25px;
+        padding-left:31px;
+        padding-right:31px;
+    }
+    .niftyItemContainer{
+        min-height:160px;
+        padding: 25px;
+    }
+    .niftyTitle {
+        font-size: 18px;
+        line-height: 21px;
+        max-height: 42px;
+    }
+    .niftyHover {
+        padding: 25px;
+        .niftyTitle {
+            max-height: 40px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+    .niftyDescription{
+        font-size:13px;
+    }
+    .img-icon {
+        width: 60px;
+        height: auto;
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .listNifty{
+        font-size:0;
+        margin: 40px -15px 0;
+    }
+    .niftyItem {
+        width: 50%;
+        min-height:205px;
+        margin-bottom: 30px;
+        padding-left:37px;
+        padding-right:37px;
+    }
+    .niftyItemContainer{
+        min-height:205px;
+    }
+    .niftyTitle {
+        max-width: 300px;
+        font-size: 22px;
+        line-height: 22px;
+        max-height: 44px;
+    }
+    .niftyIcon {
+        height: 85px;
+    }
+    .niftyIcon i {
+        font-size: 75px;
+    }
+    .niftyHover {
+        padding: 30px;
+        .niftyTitle {
+            margin-bottom: 5px;
+            max-height: 54px;
+            max-height: 44px;
+        }
+        .buttonModule {
+            margin-top: 20px;
+            a {
+                font-size: 13px;
+            }
+        }
+    }
+    .img-icon {
+        width: 75px;
+        height: auto;
+    }  
+}
+
+@media (min-width: $DesktopSize) {
+    .listNifty{
+        font-size:0;
+        margin-left:-12px;
+        margin-right:-12px;
+    }
+    .niftyItem {
+        margin-bottom: 35px;
+        padding-left:45px;
+        padding-right:45px;
+    }
+    .niftyItemContainer{
+        min-height:245px;
+    }
+    .niftyTitle {
+        color: #fff;
+        font-size: 22px;
+        line-height: 24px;
+        max-width: 350px;
+        max-height: 48px;
+    }
+    .niftyIcon {
+        height: 115px;
+    }
+    .niftyHover {
+        .niftyTitle {
+            max-height: 48px;
+            margin-bottom: 10px;
+        }
+    }
+    .niftyDescription {
+        max-height: 72px;
+    }
+    .img-icon {
+        width: 90px;
+        height: 90px;
+    }
+    
+}
+ 
+

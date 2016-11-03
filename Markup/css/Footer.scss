@@ -1,0 +1,228 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+Footer {
+    @include position(absolute, auto, auto, 0, 0, 1);
+    width: 100%;
+    background: $black;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-top: 30px;
+
+    .footerTop {
+        .footerHeader {
+            text-align: center;
+            padding-bottom: 4px;
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+        .footerContact {
+            text-align: center;
+            margin-bottom: 35px;
+
+            a.whiteButton:focus, a.whiteButton {
+                font-family: "opensansBold";
+                font-size: 20px;
+                letter-spacing: 2px;
+                padding: 4px 20px;
+                border: 1px $white solid;
+                color: $white;
+                width: auto;
+                margin-top: 22px;
+
+                &:hover {
+                    border: $red1;
+                    background: $red1;
+                    color: $white;
+                    border: 1px $red1 solid;
+                }
+            }
+
+            .footerIcon {
+                display: inline-block;
+                height: 98px;
+                line-height: 2em;
+                position: relative;
+                vertical-align: middle;
+                width: 98px;
+                background: $red1;
+                border-radius: 55px;
+                margin-bottom: 24px;
+
+                i {
+                    font-size: 48px;
+                    color: $white;
+                    text-align: center;
+                    position: relative;
+                    display: inline-block;
+
+                    &.iconFont-i-letter {
+                        margin-top: 24px;
+                    }
+
+                    &.iconFont-i-phone {
+                        margin-top: 20px;
+                        font-size: 54px;
+                    }
+
+                    &.iconFont-i-plane {
+                        margin-top: 20px;
+                        font-size: 54px;
+                    }
+                }
+            }
+
+            h3 {
+                color: $white;
+                letter-spacing: 1px;
+                line-height: 1.7;
+                font-size: 22px;
+            }
+
+            p {
+                color: $white;
+                margin: 6px 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .footerBottom {
+        padding: 15px 0;
+        text-align: center;
+
+        .footerSubscribe {
+            font-family: "opensansBold";
+            text-transform: uppercase;
+            margin-top: 20px;
+            .subscribeInfo {
+                display: inline-block;
+                width:180px;
+                p {
+                    margin: 0 0 6px;
+                    text-align: left;
+                }
+
+                a.SubscribeButton:focus, a.SubscribeButton {
+                    display:inline-block;
+                    text-align:center;
+                    font-family: "opensansRegular";
+                    font-size: 25px;
+                    letter-spacing: 4px;
+                    padding: 0 4px;
+                    border: 1px $white solid;
+                    color: $white;
+                    width: auto;
+                    text-decoration: none;
+
+                    &:hover {
+                        border: $black;
+                        background: $black;
+                        color: #fff;
+                        border: 1px $red1 solid;
+                    }
+                }
+
+                span {
+                    display: block;
+
+                    &.textBlack {
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        p {
+            &.smallText {
+                line-height: 10px;
+                font-size: 60%;
+                font-family: "opensansBold";
+                margin: 0 0 8px;
+            }
+        }
+
+
+        .footerSiteMap {
+            margin-top: 30px;
+
+            span {
+                &:after{
+                    content:" |"
+                }
+                &:last-child::after{
+                    content:""
+                }
+                a {
+                    text-decoration: none;
+                    font-family: "opensansBold";
+                    text-transform: uppercase;
+
+                    &:hover {
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        .footerAddress {
+            margin-top: 25px;
+        }
+    }
+}
+
+@media (min-width: $tabletSize) {
+    Footer {
+        .footerTop {
+            .footerHeader {
+
+                h2 {
+                    margin-bottom: 23px;
+                }
+            }
+
+            .footerContact {
+                a.whiteButton:focus, a.whiteButton {
+                    padding: 4px 10px;
+                }
+            }
+        }
+
+        .footerBottom {
+            text-align: left;
+
+            .footerLogo, .footerSiteMap, .footerSubscribe, .footerAddress {
+                text-align: left;
+            }
+
+            .footerAddress {
+                margin-top: 20px;
+            }
+
+            .footerSubscribe {
+                float: right;
+            }
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    Footer {
+        .footerTop {
+            .footerContact {
+                a.whiteButton:focus, a.whiteButton {
+                    padding: 4px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+}

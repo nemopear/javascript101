@@ -1,0 +1,97 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+.generalButton {
+    display:inline-block;
+    font-family: 'opensansRegular';
+    font-size: 13px;
+    letter-spacing:2px;
+    color:$darkGrey;
+    border:1px solid $darkGrey;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:4px 15px;
+    cursor:pointer;
+    text-align:center;
+    width: 100%;
+    max-width: 270px;
+    @include transition(all 0.2s ease);
+    &:focus{
+        @extend .generalButton;
+    }
+    &:hover{
+        background:$darkGrey;
+        color:#ffffff;
+    }
+    &[disabled]{
+        background:$lightgrey4 !important;
+        border-color:$lightgrey4 !important;
+        &:hover{
+            background:$lightgrey4 !important;
+            color:#ffffff;
+        }
+    }
+    i{
+        display:inline-block;
+        vertical-align:top;
+        margin-left:6px;
+        font-size:22px;
+    }
+}
+a.generalButton{
+    @extend .generalButton;
+    &:focus {
+        @extend .generalButton;
+    }
+    &:hover, &:active {
+        background:$darkGrey;
+        color:#fff;
+    }
+}
+.greyButton, a.greyButton {
+    background:$darkGrey;
+    color:#fff;
+    &:focus {
+        @extend .greyButton;
+    }
+    &:hover, &:active {
+        color:$darkGrey;
+        background:#fff;
+    }
+}
+
+.redButton, a.redButton{
+    background: #fff;
+    color: $red;
+    border-color: $red;
+    &:focus {
+        @extend .redButton;
+    }
+    &:hover, &:active {
+        background-color:$darkRed;
+        color:#fff;
+    }
+}
+
+.whiteButton, a.whiteButton{
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    &:focus {
+        @extend .whiteButton;
+    }
+    &:hover, &:active {
+        background-color:#fff;
+        color: $generalFontColor;
+    }
+}
+
+@media (min-width: $tabletSize) {
+
+}
+
+@media (min-width: $labtopSize) {
+}
+
+@media (min-width: $DesktopSize) {
+}
+

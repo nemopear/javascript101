@@ -1,0 +1,348 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.header {
+    min-height:77px;
+    width:100%;
+    min-width:320px;
+    background:$white;
+    backface-visibility:hidden;
+    @include position(fixed, 0, auto, auto, 0, 999);
+    .logo{
+        float:left;
+        margin-top:10px;
+        a{
+            display:block;
+            width:198px;
+        }
+    }
+}
+.menuSection{
+    float:right;
+    .navbar-toggle{
+        padding: 9px 5px;
+        margin-right:0;
+        margin-top:10px;
+        border:1px solid $lightgrey7;
+        .icon-bar{
+            height:4px;
+            width:29px;
+            background:$red1;
+            +.icon-bar{
+                margin-top:3px;
+            }
+        }
+    } 
+}
+.mainMenu{
+    display:none;
+    width:100%;
+    max-height:calc(100vh - 77px);
+    overflow-y:auto;
+    @include position(absolute, 77px, auto, auto, 0, 999);
+    .menuList{
+        list-style:none;
+        padding:0;
+        margin:0;
+        /* general menu */
+        li{
+            position:relative;
+            padding:0;
+            &.active{
+                background:$red;
+            }
+            &.menuOpen{
+                background:$red;
+                > .openSubmenu{
+                    @include transform(rotate(90deg));
+                    i{
+                        right:10px;
+                    }
+                }
+            }
+            a{
+                display:block;
+                text-transform:uppercase;
+                color:$white;
+                letter-spacing:2px;
+                text-decoration:none;
+                padding: 8px 38px 6px 15px;
+                border-bottom:1px solid $white;
+            }
+            /* submenu */
+            ul{
+                display:none;
+                list-style:none;
+                padding:0;
+                margin:0;
+            }
+            /* submenu item */
+            li{
+                background:$darkGrey;
+                li{
+                    background:$darkGrey1;
+                }
+            }
+        }
+        /* top level */
+        > li{
+            background:$black;
+        }
+        .openSubmenu{
+            height:33px;
+            width:38px;
+            padding-right:5px;
+            color:#ffffff;
+            font-size:17px;
+            text-align:right;
+            cursor:pointer;
+            @include position(absolute, 0, 0, auto, auto, 1);
+            i{
+                display: inline-block;
+                @include position(absolute, 7px, 7px, auto, auto, 1);
+            }
+        }
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .header{
+        min-height:127px;
+        .logo{
+            width:298px;
+            margin-top:22px;
+            a{
+                width:273px;
+            }
+        }
+    }
+    .headerContact{
+        float:left;
+        width:298px;
+        margin-top:23px;
+        text-align:right;
+        .headerContactEmail{
+            font-size:18px;
+        }
+        .headerContactTel{
+            font-size:25px;
+            color:$darkGrey2;
+        }
+    }
+    .menuSection{
+        .navbar-toggle{
+            padding: 12px 5px;
+            margin-right:23px;
+            margin-top:28px;
+            @include border-radius(3px);
+            .icon-bar{
+                height:4px;
+                width:35px;
+                background:$red1;
+                +.icon-bar{
+                    margin-top:4px;
+                }
+            }
+        } 
+    }
+    .mainMenu{
+        width:50%;
+        max-height:calc(100vh - 127px);
+        top:127px;
+        left:auto;
+        right:37px;
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .header{
+        min-height:180px;
+        .headerWrapper{
+            background:$white;
+            border-bottom:1px solid $darkGrey2;
+        }
+        .logo{
+            width:50%;
+            margin-top:22px;
+            a{
+                width:338px;
+            }
+        }
+    }
+    .headerContact{
+        width:50%;
+        margin-top:38px;
+    }
+    .headerSocialAndLinks{
+        width:100%;
+        @include position(absolute, 0, 15px, auto, auto, 1);
+        .headerSocial{
+            float:right;
+            margin-top:5px;
+            a{
+                display:inline-block;
+                width:21px;
+                height:23px;
+                color:$white;
+                background:$lightgrey4;
+                text-decoration:none;
+                text-align:center;
+                font-size:15px;
+                margin-left:16px;
+                @include border-radius(2px);
+                i{
+                    display:inline-block;
+                    margin-top:4px;
+                }
+            }
+        }
+        .headerLinks{
+            float:right;
+            background:$white;
+            font-size:12px;
+            padding: 3px 13px 5px;
+            margin-right:42px;
+            @include border-radius(0 0 3px 3px);
+            @include boxShadow(0px 0px 8px 1px $lightgrey4);
+            a{
+                color:$black;
+                text-decoration:none;
+            }
+        }
+    }
+    .menuSection{
+        width:100%;
+    }
+    .mainMenu{
+        display:block !important;
+        width:100%;
+        max-height:none;
+        overflow-y:visible;
+        position:static;
+        margin-top:17px;
+        .menuList{
+            text-align:center;
+            /* general menu */
+            li{
+                background:$black;
+                &.menuOpen{
+                    background:$black;
+                    > .openSubmenu{
+                        @include transform(rotate(0deg));
+                        i{
+                            right:7px;
+                        }
+                    }
+                }
+                &:hover{
+                    /* submenu */
+                    > ul{
+                        @include transform(scale(1, 1));
+                    }
+                }
+                a{
+                    padding-right:23px;
+                }
+                /* submenu */
+                ul{
+                    display:block !important;
+                    width:225px;
+                    @include position(absolute, calc(100% + 12px), auto, auto, 0 , 9);
+                    @include transform(scale(1, 0));
+                    @include transformOrigin(top);
+                    @include animationFillMode(forwards);
+                    @include transition(all 0.4s ease-out);
+                    @include transitionDelay(0.3s);
+                    ul{
+                        left:100%;
+                        top:0;
+                        @include transform(scale(0, 1));
+                        @include transformOrigin(left);
+                    }
+                }
+                /* submenu item */
+                li{
+                    text-align:left;
+                    background:$black;
+                    &:hover{
+                        background:$red;
+                    }
+                    li{
+                        background:$black;
+                    }
+                }
+            }
+            /* top level */
+            %topMenuHover{
+                content:'';
+                height:13px;
+                width:100%;
+                border-top:4px solid $red;
+                @include position(absolute, auto, auto, -12px, 0, 1);
+            }
+            > li{
+                display:inline-block;
+                margin-top:10px;
+                margin-left:20px;
+                margin-right:20px;
+                background:$white;
+                &:hover{
+                    > a{
+                        &:before{
+                            @extend %topMenuHover;
+                        }
+                    }
+                }
+                &.dropdown{
+                    &:hover{
+                        > a{
+                            &:after{
+                                content: '';
+                                border-style: solid;
+                                border-width: 9px 8px 0;
+                                border-color: $red transparent;
+                                display: block;
+                                width: 0;
+                                @include position(absolute, auto, auto, -11px, 50%, 1);
+                                @include transform(translateX(-50%));
+                            }
+                        }
+                    }
+                }
+                &.menuOpen{
+                    background:$white;
+                }
+                &.active{
+                    background:$white;
+                    > a{
+                        &:before{
+                            @extend %topMenuHover;
+                        }
+                    }
+                }
+                > .openSubmenu{
+                    display:none;
+                }
+                > a{
+                    font-size:16px;
+                    border-bottom:none;
+                    color:$darkGrey2;
+                    padding:0 0 12px 0;
+                    height:100%;
+                    text-align:center;
+                }
+            }
+            .openSubmenu{
+                height:100%;
+                i{
+                    top:50%;
+                    @include transform(translateY(-50%));
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    
+}

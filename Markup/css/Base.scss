@@ -1,0 +1,234 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+@include font-face(opensansBold, fonts/opensans-bold-webfont);
+@include font-face(opensansLight, fonts/opensans-light-webfont);
+@include font-face(opensansRegular, fonts/opensans-regular-webfont);
+@include font-face(opensansSemibold, fonts/opensans-semibold-webfont);
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-rendering: optimizeLegibility;
+    min-width:320px;
+    font-size: $generalFontSize;
+    font-family: 'opensansRegular';
+    color:$generalFontColor;
+}
+%generalheading{
+    position:relative;
+    font-family: 'opensansBold';
+    color: $red;
+    line-height: 1.3;
+    margin-top: 0;
+    font-size: 20px;
+    text-transform:uppercase;
+    margin-bottom: 23px;
+    letter-spacing:2px;
+}
+h1{
+     @extend %generalheading;
+}
+.h1Style{
+    @extend %generalheading;
+    @extend h1;
+}
+h2{
+    @extend %generalheading;
+    font-family:'opensansRegular';
+}
+.h2Style{
+    @extend %generalheading;
+    @extend h2;
+}
+h3{
+    @extend %generalheading;
+    margin-bottom:3px;
+    color:$generalFontColor;
+    &.headline{
+        &:after{
+            background:$generalFontColor;
+        }
+    }
+}
+.h3Style{
+    @extend %generalheading;
+    @extend h3;
+}
+.headline{
+    position:relative;
+    text-align:center;
+    margin-left:-15px;
+    margin-right:-15px;
+    backface-visibility:hidden;
+    &:after{
+        content:'';
+        height:1px;
+        background:$red;
+        @include position(absolute, 12px, 0, auto, 0, 0);
+    }
+    &.blackText{
+        color:$generalFontColor;
+        &:after{
+            background:$generalFontColor;
+        }
+    }
+    &.whiteText{
+        color:$white;
+        &:after{
+            background:$white;
+        }
+    }
+    span{
+        position:relative;
+        z-index:1;
+        display:inline-block;
+        padding-left:3px;
+        padding-right:3px;
+        background:$white;
+    }
+}
+h3.headline:after {
+    top: 12px;
+}
+.greyRow{
+    background:$lightgrey6;
+    .headline{
+        span{
+            background:$lightgrey6;
+        }
+    }
+}
+.redRow{
+    background:$red;
+}
+p {
+    margin: 0 0 18px 0;
+    line-height: 1.45;
+}
+ul{
+    margin: 0 0 18px 0;
+    padding: 0 0 0 17px;
+    line-height: 1.45;
+    li{
+        padding-left:5px;
+    }
+}
+ol {
+    @extend ul;
+}
+button {
+    outline:none;
+}
+a{
+    outline:none;
+    text-decoration: underline;
+    color: $red;
+    &:focus{
+        @extend a;
+    }
+    &:active{
+        @extend a;
+    }
+    &:hover {
+        @extend a;
+        text-decoration: none;
+    }
+}
+b{
+    font-family: 'opensansBold';
+    font-weight: normal;
+} 
+strong{
+    @extend b;
+}
+img{
+    max-width:100%;
+}
+hr{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    border-top: 1px solid $generalFontColor;
+}
+.center{
+    text-align:center;
+}
+.module{
+    margin-top:35px;
+    margin-bottom:35px;
+}
+.no-bullet {
+    list-style: none;
+    padding: 0;
+}
+.inlineBlock {
+    display: inline-block;
+}
+.textRed {
+    color: $red;
+}
+
+.grid-section{
+    > div:not(:first-child) {
+        .module:first-child{
+            margin-top:0;
+        }
+    }
+    .rowGreyBgModule, .rowRedBgModule {
+        .module {
+            margin-top: 35px !important;
+        }
+    }
+}
+
+
+@media (min-width: $tabletSize) {
+    h1{
+         font-size:30px;
+         margin-bottom:42px;
+    }
+    h2{
+        font-size:28px;
+        margin-bottom:40px;
+    }
+    h3{
+        font-size:20px;
+    }
+    .headline{
+        span{
+            padding-left:8px;
+            padding-right:8px;
+        }
+        &:after {
+            top: 20px;
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .headline{
+        span{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .module{
+        margin-top:43px;
+        margin-bottom:43px;
+    }
+    .grid-section{
+        .rowGreyBgModule, .rowRedBgModule {
+            .module {
+                margin-top: 35px !important;
+            }
+        }
+    }
+}

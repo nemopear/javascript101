@@ -1,0 +1,103 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.teaserBlogModule{
+    .owl-nav{
+        %teaserBlogNav{
+            position:absolute;
+            width:27px;
+            height:27px;
+            text-align:center;
+            color:$white;
+            font-size:15px;
+            background-color:$black;
+            @include border-radius(50%);
+            i{
+                margin-top: 6px;
+                display: inline-block;
+            }
+        }
+        .owl-prev{
+            @extend %teaserBlogNav;
+            left:-5px;
+        }
+        .owl-next{
+            @extend %teaserBlogNav;
+            right:-5px;
+        }
+    }
+}
+.teaserBlogList{
+    position:relative;
+}
+.teaserBlogImage{
+    margin-bottom:14px;
+    img{
+        width:100%;
+    }
+}
+.teaserBlogContent{
+    .teaserBlogContentTruncate{
+        height:86px;
+        > *{
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+    }
+    h3{
+        font-size:19px;
+        letter-spacing:0;
+        text-transform:none;
+        margin-bottom:5px;
+        color:$red;
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .teaserBlogModule{
+        .owl-nav{
+            %teaserBlogNav{
+                top:50% !important;
+                backface-visibility:hidden;
+                @include transform(translateY(-50%));
+            }
+            .owl-prev{
+                @extend %teaserBlogNav;
+                left:-42px;
+            }
+            .owl-next{
+                @extend %teaserBlogNav;
+                right:-42px;
+            }
+        }
+    }
+    .teaserBlogListContainer{
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .teaserBlogModule{
+        .owl-nav{
+            .owl-prev{
+                left:0;
+            }
+            .owl-next{
+                right:0;
+            }
+        }
+    }
+    .teaserBlogListContainer{
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .teaserBlogListContainer{
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+}

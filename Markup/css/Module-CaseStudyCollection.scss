@@ -1,0 +1,99 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.CaseStudyCollection {
+    margin-top:39px;
+    .CaseStudyCollectionContent {
+        text-align: center;
+    }
+    .CaseStudyCollectionButton{
+        margin-bottom:30px;
+    }
+    .CaseStudyCollectionBlog {
+        text-align: center;
+
+        h3 {
+            letter-spacing: 0;
+            text-transform: none;
+            color: #d9272e;
+            margin-top: 7px;
+            margin-bottom:0;
+            font-weight: bold;
+            font-family: "opensansBold";
+            font-size: 19px;
+            text-align: left;
+            @include breakAll();
+        }
+        .CaseStudyCollectionList{
+            margin-top:-51px;
+        }
+        .CaseStudyCollectionItem{
+            width:100%;
+        }
+        .CaseStudyCollectionBlogCard {
+            padding-left:15px;
+            padding-right:15px;
+            margin-top: 51px;
+            width:100%;
+            img{
+                width:100%;
+            }
+        }
+    }
+}
+
+@media (min-width: $tabletSize) {
+    .CaseStudyCollection {
+        margin-top:25px;
+        .CaseStudyCollectionButton {
+            .module {
+                margin-bottom: 10px;
+                margin-top: 7px;
+            }
+
+            a.generalButton {
+                max-width: 262px;
+            }
+        }
+        .CaseStudyCollectionBlog{
+            .CaseStudyCollectionList{
+                margin-left:-35px;
+                margin-right:-35px;
+            }
+            .CaseStudyCollectionItem{
+                float:left;
+                width:50%;
+            }
+            .CaseStudyCollectionBlogCard{
+                padding-left:35px;
+                padding-right:35px;
+            }
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    .CaseStudyCollection {
+        .CaseStudyCollectionBlog {
+            .CaseStudyCollectionItem{
+                width:33.333333%;
+            }
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    .CaseStudyCollection {
+        margin-top:35px;
+        .CaseStudyCollectionBlog {
+            .CaseStudyCollectionList{
+                margin-left:-40px;
+                margin-right:-40px;
+            }
+            .CaseStudyCollectionBlogCard{
+                padding-left:40px;
+                padding-right:40px;
+            }
+        }
+    }
+}

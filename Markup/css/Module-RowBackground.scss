@@ -1,0 +1,61 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+.rowGreyBgModule  {
+    background-color: $bgGrey;
+    .headline  {
+        span {
+            background-color: $bgGrey;
+        }
+    }
+
+    .testimonialModule {
+        .headline {
+            span {
+                color: $generalFontColor;
+            }   
+            &:after {
+                background-color: $generalFontColor;
+            }   
+        }
+    }
+}
+
+.rowRedBgModule {
+    background-color: $bgRed;
+    .headline  {
+        span {
+            background-color: $bgRed;
+        }
+        &:after {
+            background-color: #fff;
+        }
+    }
+
+    h1, h2, h3, p, * {
+        color: #fff;
+    }
+
+    .testimonialWrapper {
+        .owl-next, .owl-prev {
+            background-color: $bgBlack;
+            i {
+                color: $bgRed;
+            }
+        }
+    }
+}
+
+
+@media (min-width: $tabletSize) {
+
+}
+
+@media (min-width: $labtopSize) {
+
+}
+
+@media (min-width: $DesktopSize) {
+
+}
+

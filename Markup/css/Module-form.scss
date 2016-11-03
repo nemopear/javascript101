@@ -1,0 +1,566 @@
+﻿@import "Variable.scss";
+@import "Mixins.scss";
+
+%redBorder{
+    border:1px solid $errorRed !important;
+}
+%redBorderBottom{
+    border-bottom:1px solid $errorRed  !important;
+}
+%input-checkbox-general{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+}
+%checkbox-label-general{
+    padding-left: 34px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+    vertical-align: bottom;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom:1px;
+    margin: 0;
+    font-size: 13px;
+}
+.formContent{
+    .locationForm{
+        position:relative;
+        display:block;
+        border:1px solid $darkGrey;
+        color:$darkGrey;
+        padding:10px 15px 7px 42px;
+        margin-bottom:32px;
+        @include transition(all 0.2s ease);
+        &:hover{
+            background:$darkGrey;
+            color:#ffffff;
+        }
+        .locationFormAddress{
+            margin-bottom:0;
+        }
+        i{
+            font-size:19px;
+            @include position(absolute,13px,auto,auto,16px,1);
+        }
+    }
+}
+.manaoform{
+    margin-bottom:30px;
+    .formContainer{
+        padding-left:0;
+        padding-right:0;
+    }
+    .formDescription{
+        margin-bottom:11px;
+        p{
+            margin-bottom:0;
+            @include fontSizeLineHeight(18px, 28px);
+        }
+    }
+    .form-group{
+        position:relative;
+        width:100%;
+        margin-bottom:17px;
+        .alert{
+            display:none;
+            margin:0;
+            text-align:right;
+            padding: 7px 0 0 0;
+            border:none;
+            font-size:13px;
+            background:transparent;
+            color:$errorRed;
+            @include border-radius(0);
+            @include boxShadow(none);
+        }
+        .fieldDescription{
+            font-size:11px;
+            color:$black;
+            margin-top:3px;
+        }
+    }
+    .error-require{
+        .form-control{
+            @extend %redBorder;
+        }
+        textarea{
+            &.form-control{
+                @extend %redBorder;
+            }
+        }
+        .radio-group-container{
+            @extend %redBorderBottom;
+        }
+        .checkbox-group-container{
+            @extend %redBorderBottom;
+        }
+        .error-require{
+            display:block;
+        }
+    }
+    .error-invalid{
+        .form-control{
+            @extend %redBorder;
+        }
+        textarea{
+            &.form-control{
+                @extend %redBorder;
+            }
+        }
+        .radio-group-container{
+            @extend %redBorderBottom;
+        }
+        .checkbox-group-container{
+            @extend %redBorderBottom;
+        }
+        .error-invalid{
+            display:block;
+        }
+    }
+    .error-overMaxSize{
+        .form-control {
+            @extend %redBorder;
+        }
+        .radio-group-container{
+            @extend %redBorderBottom;
+        }
+        .checkbox-group-container{
+            @extend %redBorderBottom;
+        }
+        .error-overMaxSize{
+            display:block;
+        }
+    }
+    .teddy-bear{
+        display:none;
+    }
+    label{
+        margin-bottom:6px;
+        font-weight:normal;
+        color:#000000;
+        font-size:13px;
+        em{
+            color:$errorRed;
+            font-style:normal;
+            font-weight:normal;
+        }
+    }
+    em{
+        color:$red;
+        font-style:normal;
+        font-weight:normal;
+        @include position(absolute, 0, auto, auto, -11px, 1);
+    }
+    .label-section{
+        label{
+            margin-bottom:5px;
+        }
+    }
+    .form-group{
+        &.hidden-row{
+            margin-bottom:0;
+        }
+        p{
+            white-space:normal;
+        }
+        .form-control{
+            border:1px solid $black;
+            font-size:13px;
+            height:40px;
+            color:$black;
+            background:transparent;
+            background-color: $white;
+            padding:10px 11px;
+            @include boxShadow(none);
+            @include border-radius(0);
+            &:focus{
+                @include boxShadow(none);
+            }
+            &.placeholder{
+                color:$black;
+            }
+            &::-moz-placeholder{
+                color:$black;
+            }
+            &::-webkit-input-placeholder{
+                color:$black;
+            }
+        }
+        textarea{
+            &.form-control{
+                height:154px;
+                resize:vertical;
+                line-height:normal;
+                padding-top:11px;
+                padding-bottom:11px;
+                border:1px solid $black;
+                background:$white;
+            }
+        }
+    }
+    .checkbox-group{
+        p{
+            margin-bottom:13px;
+            em{
+                color:red;
+                font-weight:normal;
+                font-style:normal;
+            }
+        }
+        .alert-danger{
+            margin-bottom:10px;
+            margin-top:0;
+        }
+    }
+    .checkbox-group-container{
+        border-bottom:1px solid #ffffff;
+        .label-section {
+            label{
+                display:block;
+            }
+        }
+    }
+    .checkbox-form{
+        margin-bottom:6px;
+        padding-left:0;
+        .checkboxWrapper{
+            margin-bottom:5px;
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+        .checkBoxText{
+            @extend .checkboxWrapper;
+        }
+        label{
+            @include user-select(none);
+            font-size: 16px;
+            font-weight:normal;
+        }
+        .checkbox-label{
+            background-image: url(../Images/uncheck.png);
+            background-size: auto 18px;
+        }
+        input{
+            &[type=checkbox]{
+                &.input-checkbox{
+                    @extend %input-checkbox-general;
+                    + label{
+                        &.checkbox-label{
+                            @extend %checkbox-label-general;
+                        }
+                    }
+                    &:checked{
+                         + label{
+                             &.checkbox-label{
+                                 background-image: url(../Images/check.png);
+                             }
+                         }
+                    }
+                }
+            }
+        }
+    }
+    .radio-group{
+        @extend .checkbox-group;
+    }
+    .radio-group-container{
+        border-bottom:1px solid #ffffff;
+        .label-section{
+            label{
+                display:block;
+            }
+        } 
+    }
+    .radio-form{
+        @extend .checkbox-form;
+        .checkbox-label{
+            background-image: url(../Images/radio-uncheck.png);
+            background-size: auto 18px;
+        }
+        input{
+            &[type=radio]{
+                &.input-checkbox{
+                    @extend %input-checkbox-general;
+                    + label{
+                        &.checkbox-label{
+                            @extend %checkbox-label-general;
+                        }
+                    }
+                    &:checked{
+                         + label{
+                             &.checkbox-label{
+                                 background-image: url(../Images/radio-check.png);
+                             }
+                         }
+                    }
+                }
+            }
+        }
+    }
+    .fileinput{
+        &.input-group{
+            display:block;
+            margin-bottom:0;
+            position:relative;
+        }
+        .form-control{
+            padding-top:9px;
+            padding-right: 101px;
+            border-right:none;
+        }
+        .fileuploadBox{
+            line-height:normal;
+            width:100%;
+        }
+        
+    }
+    .fileinput-filename{
+        color:$black;
+        width:100%;
+        line-height:25px;
+        text-transform:none;
+        @include textEllipsis();
+    }
+    %uploadButton{
+        width:100%;
+        font-size:13px;
+        line-height:normal;
+        font-weight:normal !important;
+        text-shadow:none;
+        color:$red;
+    }
+    .uploadFileButton{
+        @extend %uploadButton;
+    }
+    .fileinput-exists{
+        @extend %uploadButton;
+        @include textEllipsis();
+        .fileinput-filename{
+            color:$generalFontColor;
+        }
+        .fileinput-exists{
+            display:inline-block;
+        }
+    }
+    .fileinput-new{
+        @extend %uploadButton;
+        @include textEllipsis();
+        &.input-group{
+            .btn-file{
+                text-align:center;
+                @include border-radius(0);
+            }
+        }
+    }
+    .fileUploadBtnFile{
+        display:inline-block;
+        height:40px;
+        width:91px;
+        padding-top:11px;
+        @include position(absolute, 0, 0, auto, auto, 2 !important);
+        &:hover{
+            color:$white !important;
+            .fileinput-new{
+                color:$white !important;
+            }
+            .fileinput-exists{
+                color:$white !important;
+            }
+        }
+        input{
+            cursor:default;
+        }
+    }
+    .input-group-addon{
+        background:$white;
+        color:$black;
+        border:1px solid $red;
+        @include transition(all 0.2s ease-out);
+        &:focus{
+            @extend .input-group-addon;
+        }
+        &:hover{
+            background:$red;
+        }
+    }
+    .winney-the-pooh{
+        display:none;
+    }
+    .login-error p {
+        padding:0;
+        margin:0;
+        position: relative;
+        top: -10px;
+        color:$errorRed;
+    }
+    .requiredWarning{
+        color:$red;
+        margin-bottom:6px;
+    }
+    .submitForm{
+        min-width:183px;
+        max-width:none;
+        width:auto;
+        padding: 4px 15px 4px 15px;
+        text-transform:none;
+        text-transform:uppercase;
+        font-size:18px;
+        &:focus{
+            @extend .submitForm;
+        }
+    }
+}
+
+.select2-container{
+    width:100% !important;
+    &:focus{
+        outline:none;
+    }
+    .select2-selection--single{
+        outline:none;
+        height: 40px;
+        border:1px solid $black;
+        @include border-radius(0);
+        .select2-selection__rendered{
+            padding:0 11px;
+            color:#414141;
+            @include fontSizeLineHeight(13px, 40px);
+        }
+    }
+}
+.error-require{
+    .select2-container{
+        .select2-selection--single{
+            border:1px solid $errorRed !important;
+        }
+    }
+}
+.select2-container--default{
+    .select2-selection--single{
+        .select2-selection__placeholder{
+            font-size:13px;
+            color:$bgBlack;
+        }
+        .select2-selection__arrow{
+            b{
+                border-color:$red transparent transparent transparent;
+                margin-top:0;
+                top:62%;
+            }
+        }
+    }
+    .select2-results__option--highlighted{
+        &[aria-selected]{
+            background-color:$red;
+        }
+    }
+}
+.select2-results__option{
+    font-size:13px;
+    padding-left:11px;
+}
+.select2-container--open{
+    .select2-dropdown--below{
+        border:1px solid $black;
+        border-top:none;
+    }
+}
+
+@media (min-width: $tabletSize) {
+    /*tablet*/
+    .formContent{
+        margin-bottom: 55px;
+        text-align:right;
+        h1{
+            margin-bottom:0;
+            margin-top:5px;
+            text-align:left;
+        }
+        .locationForm{
+            display:inline-block;
+            text-align:left;
+            padding:11px 15px 10px 42px;
+            margin-bottom:0;
+            .locationFormAddress{
+                @include fontSizeLineHeight(18px, 28px);
+            }
+        }
+    }
+    .manaoform{
+        .formDescription{
+            margin-bottom:39px;
+        }
+        .formContainer{
+            padding-left:158px;
+            padding-right:158px;
+        }
+        .form-group{
+            .fieldDescription{
+                text-align:right;
+                margin-top:11px;
+            }
+        }
+        .checkbox-form{
+            margin-bottom:0;
+        }
+        .fileinput{
+            .form-control{
+                padding-right:180px;
+            }
+        }
+        .fileUploadBtnFile{
+            width:170px;
+        }
+        .requiredWarning{
+            margin-bottom:19px;
+        }
+    }
+}
+
+@media (min-width: $labtopSize) {
+    /*small desktop*/
+    .manaoform{
+        em{
+            font-size:16px;
+            left:-15px;
+        }
+        .formContainer{
+            padding-left:40px;
+            padding-right:40px;
+        }
+        form{
+            font-size:0;
+        }
+        .form-group{
+            .alert{
+                padding: 4px 0 3px;
+            }
+        }
+        .halfwidth{
+            float:none;
+            display:inline-block;
+            vertical-align:top;
+        }
+        .requiredWarning{
+            font-size:13px;
+        }
+    }
+}
+
+@media (min-width: $DesktopSize) {
+    /*large desktop*/
+    .manaoform{
+        .formContainer{
+            padding-left:138px;
+            padding-right:138px;
+        }
+    }
+}
