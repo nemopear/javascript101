@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Print Research</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../styles/style.css"/>
+</head>
+<body id="cwobel" class="print">
+	<div class="container">
+		<div class="page-section">
+			<div class="imgWrapper">
+				<img src="media/01.jpg" alt="" class="img-responsive">
+			</div>
+			<div class="contentWrapper">
+				<div class="detailSlideshowContentLeft">
+					<h1 model="rentalItem">Attraktivt lejemål i Hellerup</h1>
+					<h2 model="rentalItem">Strandvejen 70, 2. sal</h2>
+					<h3 model="rentalItem">2900 Hellerup</h3>
+					<div class="detailSlideshowSocial hidden-xs hidden-sm">
+					<p>Fortæl andre om dette lejemål</p>
+				</div>
+				<div class="detailSlideshowContentRight"><p>Ejendom beliggende med stor synlighed&nbsp;i Hellerup, på&nbsp;Strandvejen som en del af Tuborg Nord tæt på København. Ejendommen er et flerbrugerhus for internationale virksomheder, som rummer fælles kantine og mødelokaler på tagetagen. I stueplanet ligger en Q8 koncept-butik og servicetank.</p>
+					<p>Det ledige lejemål er beliggende med fantastisk udsigt over Hellerup og Øresund. Der er flot indgangsparti fra gaden i glas og stål med adgangskontrol. Lokalet er forsynet med grundventilation og fancoils, hvilket sikrer et behageligt indeklima.</p>
+					<p>Lejemålet på 1.357 m² beliggende 2. sal,&nbsp;fremstår lyst og indbydende, og kan indeholde receptionsområde, mødelokaler, flotte kontorlokaler af varierende størrelse.&nbsp;Personelevator og vareelevator som&nbsp;forefindes&nbsp;på&nbsp;fælles ankomstområde med anden lejer.</p>
+					<p>Lejemålet overtages nyistandsat og indrettes til lejers brug.</p>
+					<p>Lejemålet er beliggende med få minutters adgang til Hellerup Station. Adskillige buslinier holder lige ved døren og der er nem og hurtig adgang til mortorvejsnettet og indfaldsvejene - såvel nord- som sydfra.</p>
+					<p>Der er mulighed for at leje parkeringspladser enten i parkeringskælder eller på terræn. Parkeringsplads i parkeringskælder koster Kr. 1.250 per plads pr. mdr.</p>
+					<p>Der er mulighed for at leje parkeringspladser enten i parkeringskælder eller på terræn. Parkeringsplads i parkeringskælder koster Kr. 1.250 per plads pr. mdr.</p><p>Der er mulighed for at leje parkeringspladser enten i parkeringskælder eller på terræn. Parkeringsplads i parkeringskælder koster Kr. 1.250 per plads pr. mdr.</p><p>Der er mulighed for at leje parkeringspladser enten i parkeringskælder eller på terræn. Parkeringsplads i parkeringskælder koster Kr. 1.250 per plads pr. mdr.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime tenetur iste, totam obcaecati ea dicta molestiae. Asperiores enim cupiditate, aut libero provident molestias nam, voluptates ab consequatur illo, iusto aliquid ea, sapiente atque inventore ipsam numquam est. Maxime rem incidunt, deleniti minima enim, earum culpa reprehenderit! Ipsum quam necessitatibus, mollitia, quas id illum? Mollitia nostrum, perspiciatis earum voluptates est, id reiciendis ab eos delectus quo explicabo sequi similique sint quod ducimus. Accusantium impedit iusto illo magni atque. Sit perferendis vel, ab, nemo ipsam praesentium delectus vero aspernatur? Perferendis voluptatum eaque tenetur quae facere repudiandae quasi soluta. Quos commodi vero perspiciatis.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestiae reiciendis repellendus est ad deleniti officia, ex vitae quis optio, laboriosam expedita, tenetur, sint facere ducimus voluptates quidem exercitationem beatae magni animi dolor sunt veniam. Nobis tempore non hic itaque ipsa id officia, quidem vitae adipisci totam. Molestiae nisi esse dolore aliquid voluptatibus obcaecati et tempora consectetur, dignissimos dolores atque aut distinctio, a alias quae omnis fugit vero laboriosam eius explicabo cumque temporibus minus autem. Distinctio maxime nam, fuga at culpa nobis, fugiat voluptatum sit delectus suscipit alias consequatur sequi temporibus! Quisquam voluptatem porro nobis fuga reprehenderit earum. Nesciunt, assumenda.</p>
+				</div>
+				<div class="detailInfoColumnWrapper">
+					<div class="row">
+						<div class="col-xs-3">
+							<div class="detailInfoTitle isClose">
+								<h3 class="h2Style">Information</h3>
+								<i class="iconFont-cwi-arrow-list-mobile"></i>
+							</div>
+							<ul class="detailInfoList no-bullet">
+								<!-- ngRepeat: information in rental.Information -->
+								<li data-ng-repeat="information in rental.Information" data-ng-show="information.Value" class="ng-scope">
+									<h3 data-ng-show="information.Label" class="ng-binding">Adresse</h3>
+									<p data-ng-bind-html="getHtml(information.Value)" class="ng-binding">Strandvejen 70, 2. sal<br> 2900 Hellerup</p>
+								</li>
+								<!-- end ngRepeat: information in rental.Information -->
+								<li data-ng-repeat="information in rental.Information" data-ng-show="information.Value" class="ng-scope">
+									<h3 data-ng-show="information.Label" class="ng-binding">Anvendelse</h3>
+									<p data-ng-bind-html="getHtml(information.Value)" class="ng-binding">Kontor/Administration</p>
+								</li>
+								<!-- end ngRepeat: information in rental.Information -->
+								<li data-ng-repeat="information in rental.Information" data-ng-show="information.Value" class="ng-scope">
+									<h3 data-ng-show="information.Label" class="ng-binding">Areal</h3>
+									<p data-ng-bind-html="getHtml(information.Value)" class="ng-binding">1.357 m²</p>
+								</li>
+								<!-- end ngRepeat: information in rental.Information -->
+								<li data-ng-show="rental.InformationIconPicker" class="">
+									<span class="detailInfoIcon"><i class="iconFont-Energi_D"></i></span>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-3">
+							<div class="detailInfoTitle isClose">
+								<h3 class="h2Style">Økonomi</h3>
+								<i class="iconFont-cwi-arrow-list-mobile"></i>
+							</div>
+							<ul class="detailInfoList no-bullet">
+								<!-- ngRepeat: economy in rental.Economy -->
+								<li data-ng-repeat="economy in rental.Economy" data-ng-show="economy.Value" class="ng-scope">
+									<h3 data-ng-show="economy.Label" class="ng-binding">Leje</h3>
+									<p data-ng-bind-html="getHtml(economy.Value)" class="ng-binding">DKK 1.450 pr. m² p.a. / DKK 1.967.650 årligt</p>
+								</li>
+								<!-- end ngRepeat: economy in rental.Economy -->
+								<li data-ng-repeat="economy in rental.Economy" data-ng-show="economy.Value" class="ng-scope">
+									<h3 data-ng-show="economy.Label" class="ng-binding">Driftsudgifter</h3>
+									<p data-ng-bind-html="getHtml(economy.Value)" class="ng-binding">DKK 445 pr. m² p.a. / DKK 603.865 årligt</p>
+								</li>
+								<!-- end ngRepeat: economy in rental.Economy -->
+								<li data-ng-repeat="economy in rental.Economy" data-ng-show="economy.Value" class="ng-scope">
+									<h3 data-ng-show="economy.Label" class="ng-binding">Aconto varme inkl. vand og ventilation/køl</h3>
+									<p data-ng-bind-html="getHtml(economy.Value)" class="ng-binding">DKK 150 pr. m² p.a. / DKK 203.550 årligt</p>
+								</li>
+								<!-- end ngRepeat: economy in rental.Economy -->
+								<li data-ng-repeat="economy in rental.Economy" data-ng-show="economy.Value" class="ng-scope">
+									<h3 data-ng-show="economy.Label" class="ng-binding">Moms</h3>
+									<p data-ng-bind-html="getHtml(economy.Value)" class="ng-binding">Ejendommen er momsregistreret og lejen m.v. pålægges moms, p.t. 25%<br>
+										<br> Ejendommen er momsregistreret og lejen m.v. tillægges moms, p.t. 25%</p>
+								</li>
+								<!-- end ngRepeat: economy in rental.Economy -->
+							</ul>
+						</div>
+						<div class="col-xs-3">
+							<div class="detailInfoTitle isClose">
+								<h3 class="h2Style">Kontakt</h3>
+								<i class="iconFont-cwi-arrow-list-mobile"></i>
+							</div>
+							<ul class="detailInfoList no-bullet">
+								<!-- ngRepeat: contact in rental.Contacts -->
+								<li data-ng-repeat="contact in rental.Contacts" class="ng-scope">
+									<p class="ng-binding">
+										<b class="ng-binding">Ninna Therkelsen</b><br data-ng-show="contact.Name" class=""> CBRE A/S<br data-ng-show="contact.Company"
+											class=""> Rued Langgaards Vej 6-8<br data-ng-show="contact.Address" class=""> 2300 København S.
+										<br
+											data-ng-show="contact.ZipcodeAndCity" class="">
+											<span data-ng-show="contact.PhoneNumber" class="">Telefon:</span> 70 22 96 01<br data-ng-show="contact.PhoneNumber"
+												class="">
+											<span data-ng-show="contact.Mobile" class="">Mobil:</span> 31 24 85 89
+									</p>
+									<p data-ng-show="contact.Email" class=""><a href="mailto:ninna.therkelsen@cbre.com" class="ng-binding">ninna.therkelsen@cbre.com</a></p>
+								</li>
+								<!-- end ngRepeat: contact in rental.Contacts -->
+								<li data-ng-repeat="contact in rental.Contacts" class="ng-scope">
+									<p class="ng-binding">
+										<b class="ng-binding">Andreas Willumsen</b><br data-ng-show="contact.Name" class=""> CBRE A/S
+										<br>
+										CBRE A/S<br>
+										Rued Langgaardsvej 6-8<br>
+										2300 København S.<br>
+										Telefon: 70 22 96 01<br>
+										Mobil: 31 31 68 93
+									</p>
+									<p data-ng-show="contact.Email" class=""><a href="mailto:andreas.willumsen@cbre.com" class="ng-binding">andreas.willumsen@cbre.com</a></p>
+								</li>
+								<!-- end ngRepeat: contact in rental.Contacts -->
+							</ul>
+							<div class="detailInfoDownload">
+								<a href="/media/2536/cwoe_prospekt_strandvejen-70-2-sal_low.pdf" target="_blank" class="generalGreenButton">Download Prospekt</a>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="detailMapContainer">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8986.81394594891!2d12.576867!3d55.728905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfce4fba698b98a3d!2sHellerup+Kirkeg%C3%A5rd!5e0!3m2!1sth!2sus!4v1479358538279" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="footer">
+		<img src="media/logo.png" alt="" class="logo">
+	</div>
+</body>
+</html>

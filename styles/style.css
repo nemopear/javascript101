@@ -112,3 +112,70 @@ body.menuStickyDemo {
   background-color: #eee;
   color: #fff;
   float: left; }
+
+body#cwobel {
+  color: #003d58; }
+
+.detailMapContainer iframe {
+  width: 100%;
+  height: 250px; }
+
+@media print {
+  @page {
+    size: auto;
+    /* auto is the current printer page size */
+    margin: 10mm 0; }
+  @page :top {
+    margin-top: 0; }
+  @page :last {
+    margin-bottom: 20mm;
+    #footer {
+      display: block; } }
+  body.print, #cwobel {
+    position: relative;
+    padding: 0 0 100px; }
+    body.print *, body.print a, #cwobel *, #cwobel a {
+      color: #003d58 !important; }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px; }
+
+  .col-xs-3 {
+    width: 25%; }
+
+  .page-section {
+    /*height:  430mm;*/
+    page-break-after: always;
+    padding: 0 20px 35px;
+    widows: 1; }
+
+  .imgWrapper {
+    height: 350px;
+    overflow: hidden;
+    position: relative; }
+    .imgWrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+
+  #footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    left: 0; }
+
+  .detailInfoColumnWrapper {
+    page-break-inside: avoid; }
+
+  a[href]:after {
+    content: none !important; }
+
+  img[src]:after {
+    content: none !important; } }
+
+/*# sourceMappingURL=style.css.map */
