@@ -14,8 +14,19 @@
     }
     body.print, #cwobel {
         position: relative;
-        padding: 0 0 100px;
+        padding: 0;
+        color: #003d58;
         *, a { color: #003d58 !important;}
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 16px;
+        font-weight: bold;
     }
     .row {
         margin-left: -15px;

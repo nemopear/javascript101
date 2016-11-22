@@ -1,9 +1,21 @@
 body#cwobel {
-    color: #003d58;
+    //color: #003d58;
+    color: #fff;
 }
 .detailMapContainer {
     iframe {
         width: 100%;
         height: 250px;
     }
+}
+
+#cwobel {
+    #footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+.background-wrapper {
+    background-image: url(../images/coffee.jpg);
 }

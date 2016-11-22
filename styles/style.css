@@ -114,11 +114,18 @@ body.menuStickyDemo {
   float: left; }
 
 body#cwobel {
-  color: #003d58; }
+  color: #fff; }
 
 .detailMapContainer iframe {
   width: 100%;
   height: 250px; }
+
+#cwobel #footer {
+  text-align: center;
+  margin-top: 30px; }
+
+.background-wrapper {
+  background-image: url(../images/coffee.jpg); }
 
 @media print {
   @page {
@@ -133,9 +140,20 @@ body#cwobel {
       display: block; } }
   body.print, #cwobel {
     position: relative;
-    padding: 0 0 100px; }
+    padding: 0;
+    color: #003d58; }
     body.print *, body.print a, #cwobel *, #cwobel a {
       color: #003d58 !important; }
+
+  h1 {
+    font-size: 20px; }
+
+  h2 {
+    font-size: 18px; }
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold; }
 
   .row {
     margin-left: -15px;
